@@ -1,4 +1,3 @@
-version: '2'
 services:
   solr:
     image: solr:9.8
@@ -11,11 +10,10 @@ services:
       - index-data:/var/solr
       - ./data:/data
       - ../target:/build
-      - ./flightrecords:/flightrecords
     environment:
       - ENABLE_REMOTE_JMX_OPTS=true
       - SOLR_HEAP=4g
-      - ADDITIONAL_CMD_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:1044 -XX:StartFlightRecording=settings=profile,filename=/flightrecords/profile.jfr,maxage=30m -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+PreserveFramePointer
+      - ADDITIONAL_CMD_OPTS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:1044 -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+PreserveFramePointer -Dsolr.config.lib.enabled=true
       - SOLR_SECURITY_MANAGER_ENABLED=false
     entrypoint:
       - docker-entrypoint.sh
