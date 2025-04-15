@@ -5,14 +5,12 @@ import re
 import sys
 import tarfile
 import xml.etree.ElementTree as etree
-from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
+#from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
 from pathlib import Path
 from urllib import request
+from ipdb import set_trace as trace
 
 
-GOOGLE1000_PATH = './data/google1000'
-GOOGLE1000_URL = 'https://ocrhl.jbaiter.de/data/google1000_texts.tar.gz'
-GOOGLE1000_NUM_VOLUMES = 1000
 LUNION_PATH = './data/bnl_lunion'
 LUNION_TEXTS_URL = 'https://ocrhl.jbaiter.de/data/bnl_lunion_texts.tar.gz'
 LUNION_NUM_ARTICLES = 41446
@@ -29,59 +27,6 @@ class SolrException(Exception):
     def __init__(self, resp, payload):
         self.message = resp
         self.payload = payload
-
-
-def gbooks_are_volumes_missing(base_path):
-    for vol_no in range(1000):
-        vol_path = base_path / 'Volume_{:04}.hocr'.format(vol_no)
-        if not vol_path.exists():
-            return True
-    return False
-
-
-def gbooks_parse_metadata(hocr):
-    # I know, the <center> won't hold, but I think it's okay in this case,
-    # especially since we 100% know what data this script is going to work with
-    # and we don't want an external lxml dependency in here
-    raw_meta =  {key: int(value) if value.isdigit() else value
-                 for key, value in HOCR_METADATA_PAT.findall(hocr)}
-    return {
-        'author': [raw_meta.get('creator')] if 'creator' in raw_meta else [],
-        'title': [raw_meta['title']],
-        'date': '{}-01-01T00:00:00Z'.format(raw_meta['date']),
-        **{k: v for k, v in raw_meta.items()
-           if k not in ('creator', 'title', 'date')}
-    }
-
-
-def gbooks_load_documents(base_path):
-    if gbooks_are_volumes_missing(base_path):
-        print("Downloading missing volumes to {}".format(base_path))
-        base_path.mkdir(exist_ok=True)
-        with request.urlopen(GOOGLE1000_URL) as resp:
-            tf = tarfile.open(fileobj=resp, mode='r|gz')
-            for ti in tf:
-                if not ti.name.endswith('.hocr'):
-                    continue
-                vol_id = ti.name.split('/')[-1].split('.')[0]
-                ocr_text = tf.extractfile(ti).read()
-                doc_path = base_path / '{}.hocr'.format(vol_id)
-                if not doc_path.exists():
-                    with doc_path.open('wb') as fp:
-                        fp.write(ocr_text)
-                hocr_header = ocr_text[:1024].decode('utf8')
-                yield {'id': vol_id.split("_")[-1],
-                       'source': 'gbooks',
-                       'ocr_text': '/data/google1000/' + doc_path.name,
-                       **gbooks_parse_metadata(hocr_header)}
-    else:
-        for doc_path in base_path.glob('*.hocr'):
-            hocr = doc_path.read_text()
-            yield {'id': doc_path.stem.split("_")[1],
-                   'source': 'gbooks',
-                   'ocr_text': '/data/google1000/' + doc_path.name,
-                   **gbooks_parse_metadata(hocr)}
-
 
 def bnl_get_metadata(mods_tree):
     authors = []
@@ -166,10 +111,10 @@ def bnl_extract_article_docs(issue_id, mets_path, alto_basedir):
 
 def bnl_are_volumes_missing(base_path):
     num_pages = sum(1 for _ in base_path.glob("*/text/*.xml"))
-    return num_pages != 10880
+    #return num_pages != 10880
+    return num_pages != 8
 
-
-def bnl_load_documents(base_path):
+def _bnl_load_documents(base_path):
     if not base_path.exists():
         base_path.mkdir()
     if bnl_are_volumes_missing(base_path):
@@ -202,16 +147,27 @@ def bnl_load_documents(base_path):
             yield from bnl_extract_article_docs(
                 vol_id, mets_path, vol_path / 'text')
     else:
-        with ProcessPoolExecutor(max_workers=4) as pool:
-            futs = []
-            for issue_dir in base_path.iterdir():
-                if not issue_dir.is_dir() or not issue_dir.name.startswith('15'):
-                    continue
-                mets_path = next(iter(issue_dir.glob("*-mets.xml")))
-                vol_id = issue_dir.name.replace("newspaper_lunion_", "")
-                futs.append(pool.submit(bnl_extract_article_docs, vol_id, mets_path, issue_dir / 'text'))
-            for fut in as_completed(futs):
-                yield from fut.result()
+        #with ProcessPoolExecutor(max_workers=4) as pool:
+        for issue_dir in base_path.iterdir():
+            if not issue_dir.is_dir() or not issue_dir.name.startswith('15'):
+                continue
+            mets_path = next(iter(issue_dir.glob("*-mets.xml")))
+            vol_id = issue_dir.name.replace("newspaper_lunion_", "")
+            rslt = bnl_extract_article_docs(vol_id, mets_path, issue_dir / 'text')
+            yield rslt
+
+def bnl_load_documents(base_path):
+    for issue_dir in base_path.iterdir():
+        if not issue_dir.is_dir() or not issue_dir.name.startswith('15'):
+            continue
+        mets_path = next(iter(issue_dir.glob("*-mets.xml")))
+        vol_id = issue_dir.name.replace("newspaper_lunion_", "")
+        #vol_id: '1534425_1861-01-01'
+        #mets_path: PosixPath('data/bnl_lunion/1534425_newspaper_lunion_1861-01-01/1534425_newspaper_lunion_1861-01-01-mets.xml')
+        # issue_dir / 'text': PosixPath('data/bnl_lunion/1534425_newspaper_lunion_1861-01-01/text')
+        trace()
+        rslt = bnl_extract_article_docs(vol_id, mets_path, issue_dir / 'text')
+        yield rslt
 
 
 def index_documents(docs):
@@ -224,33 +180,22 @@ def index_documents(docs):
         raise SolrException(json.loads(resp.read()), docs)
 
 
-def generate_batches(it, chunk_size):
-    cur_batch = []
-    for x in it:
-        cur_batch.append(x)
-        if len(cur_batch) == chunk_size:
-            yield cur_batch
-            cur_batch = []
-    if cur_batch:
-        yield cur_batch
-
-
 if __name__ == '__main__':
-    with ProcessPoolExecutor(max_workers=8) as pool:
         print("Indexing BNL/L'Union articles")
-        futs = []
         bnl_iter = bnl_load_documents(Path(LUNION_PATH))
-        for idx, batch in enumerate(generate_batches(bnl_iter, 1000)):
-            futs.append(pool.submit(index_documents, batch))
-            print("\r{:05}/{}".format((idx+1)*1000, LUNION_NUM_ARTICLES), end='')
-        for fut in as_completed(futs):
-            fut.result()
-        print("\nIndexing Google 1000 Books volumes")
-        futs = []
-        gbooks_iter = gbooks_load_documents(Path(GOOGLE1000_PATH))
-        for idx, batch in enumerate(generate_batches(gbooks_iter, 4)):
-            futs.append(pool.submit(index_documents, batch))
-            print("\r{:04}/{}".format((idx+1)*4, GOOGLE1000_NUM_VOLUMES), end='')
-        for fut in as_completed(futs):
-            fut.result()
-    print("\n")
+        batch = [it for it in bnl_iter] 
+        longbatch = []
+        for bb in batch:
+            longbatch += bb
+        trace()
+        index_documents(longbatch)
+
+'''
+Delete all 'ocr' content
+curl -X POST -H 'Content-Type: text/xml' -d '<delete><query>*:*</query></delete>' "http://localhost:8983/solr/ocr/update?commit=true"
+docker 
+ docker-compose up -d
+ docker-compose down
+ docker image ls
+ docker rmi 970e7fc0eac1
+'''
