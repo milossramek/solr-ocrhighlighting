@@ -165,7 +165,6 @@ def bnl_load_documents(base_path):
         #vol_id: '1534425_1861-01-01'
         #mets_path: PosixPath('data/bnl_lunion/1534425_newspaper_lunion_1861-01-01/1534425_newspaper_lunion_1861-01-01-mets.xml')
         # issue_dir / 'text': PosixPath('data/bnl_lunion/1534425_newspaper_lunion_1861-01-01/text')
-        trace()
         rslt = bnl_extract_article_docs(vol_id, mets_path, issue_dir / 'text')
         yield rslt
 
@@ -187,7 +186,6 @@ if __name__ == '__main__':
         longbatch = []
         for bb in batch:
             longbatch += bb
-        trace()
         index_documents(longbatch)
 
 '''
@@ -196,6 +194,17 @@ curl -X POST -H 'Content-Type: text/xml' -d '<delete><query>*:*</query></delete>
 docker 
  docker-compose up -d
  docker-compose down
+ docker container ls
  docker image ls
  docker rmi 970e7fc0eac1
+ docker exec -it ebf89d7faa4a bash #prezi
+ docker exec -it  bash #prezi
+
+Rebuild a container:
+ docker stop example-iiif-prezi-1
+ docker rm example-iiif-prezi-1
+ cd iiif-prezi  #Where the Dockerfile is
+ docker build -t example-iiif-prezi . #The dot!
+ cd ..
+ docker-compose up -d
 '''
