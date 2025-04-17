@@ -69,20 +69,9 @@ def index_documents(docs):
     if resp.status >= 400:
         raise SolrException(json.loads(resp.read()), docs)
 
-
-def generate_batches(it, chunk_size):
-    cur_batch = []
-    for x in it:
-        cur_batch.append(x)
-        if len(cur_batch) == chunk_size:
-            yield cur_batch
-            cur_batch = []
-    if cur_batch:
-        yield cur_batch
-
-
 if __name__ == '__main__':
     gbooks_iter = gbooks_load_documents(Path(GOOGLE1000_PATH))
     batch = [it for it in gbooks_iter] 
     for book in batch:
+        trace()
         index_documents([book])
