@@ -203,8 +203,7 @@ docker
 Rebuild a container:
  docker stop example-iiif-prezi-1
  docker rm example-iiif-prezi-1
- cd iiif-prezi  #Where the Dockerfile is
- docker build -t example-iiif-prezi . #The dot!
- cd ..
- docker-compose up -d
+ docker build -t example-iiif-prezi iiif-prezi 
+ docker run --name example-iiif-prezi-1 example-iiif-prezi
+ #docker-compose up -d
 '''
