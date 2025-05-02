@@ -9,11 +9,16 @@ import lxml.etree as etree
 import monsterurl
 from sanic import Sanic
 from sanic.request import Request
-from sanic.response import json, HTTPResponse
+from sanic.response import json, HTTPResponse, text
 
 import bnl
 import common
 import gbooks
+
+import logging
+
+logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 # The BNL ALTO encodes coordinates as 1/10mm values.
 # To convert to pixels, we divide the dots-per-inch of the image (300 in both
@@ -43,8 +48,22 @@ RESPONSE_TEMPLATE = {
 
 app = Sanic(load_env="CFG_", name="ocrhl-iiif-prezi")
 
+@app.get("/")
+async def handler(request):
+    logger.debug("Handling request to /")
+    return text("MMMMMMMMMMMMMMMMMMMMMHello, world!")
+
+@app.listener('before_server_start')
+async def setup_logging(app, loop):
+    logger.info("MMMMMMMMMMMMMMMMMMMMMSanic server is starting...")
+
+@app.exception(Exception)
+async def handle_exception(request, e):
+    logger.error(f"An error occurred: {e}", exc_info=True)
+    return text("MMMMMMMMMMMMMMMMMMMMMInternal Server Error", status=500)
 
 async def query_solr(query: str, fq: str):
+    print("MMMMMMMMMMMMMMMMMMMMM make_contentsearch_response", query, fq)
     params = {
         'q': f'{query}',
         'df': 'ocr_text',
@@ -72,6 +91,7 @@ async def query_solr(query: str, fq: str):
 
 
 def make_contentsearch_response(hlresp, ignored_fields, vol_id, query, is_bnl):
+    print("MMMMMMMMMMMMMMMMMMMMM make_contentsearch_response", vol_id)
     protocol = app.config.get('PROTOCOL', 'http')
     location = app.config.get('SERVER_NAME', 'localhost:8008')
     app_path = app.config.get('APP_PATH', '')
@@ -99,11 +119,6 @@ def make_contentsearch_response(hlresp, ignored_fields, vol_id, query, is_bnl):
                 y = region['uly'] + hlbox['uly']
                 w = hlbox['lrx'] - hlbox['ulx']
                 h = hlbox['lry'] - hlbox['uly']
-                if is_bnl:
-                    x = int(x * BNL_10MM_TO_PIX_FACTOR)
-                    y = int(y * BNL_10MM_TO_PIX_FACTOR)
-                    w = int(w * BNL_10MM_TO_PIX_FACTOR)
-                    h = int(h * BNL_10MM_TO_PIX_FACTOR)
                 ident = common.make_id(app, vol_id)
                 anno_ids.append(ident)
                 anno = {
@@ -153,8 +168,10 @@ async def search(request: Request, doc_id) -> HTTPResponse:
 @app.route('/<volume_id>/manifest', methods=['GET', 'OPTIONS'])
 async def get_manifest(request, volume_id):
     if GBOOKS_PAT.match(volume_id):
+        print("MMMMMMMMMMMMMMMMMMMMM1 get_manifest", volume_id)
         return json(gbooks.make_manifest(app, volume_id))
     elif BNL_ISSUE_PAT.match(volume_id):
+        print("MMMMMMMMMMMMMMMMMMMMM2 get_manifest", volume_id)
         return json(bnl.make_manifest(app, volume_id))
     else:
         return json({'error': 'Unknown identifier'}, status=404)
@@ -167,4 +184,5 @@ if __name__ == "__main__":
         port = int(sys.argv[1])
     if len(sys.argv) == 3:
         debug = sys.argv[2] == 'debug'
-    app.run(host="0.0.0.0", port=port, debug=debug)
+    print("starting app")
+    app.run(host="0.0.0.0", port=port, debug=True)
