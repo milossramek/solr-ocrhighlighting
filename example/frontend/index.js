@@ -27,8 +27,8 @@ var PARAMS = {
   "hl.fl": "title,subtitle,author,publisher",
   "hl.ocr.fl": "ocr_text",
 };
-var BNL_10MM_TO_PIX_FACTOR = 300 / 254;
 var IMAGE_API_BASE = "https://ocrhl.jbaiter.de/iiif/image/v3";
+var IMAGE_API_BASE_B = "https://iiif.beliana.sav.sk/iiif/2";
 if (typeof window !== "undefined") {
   var APP_BASE = `${window.location.protocol || "http:"}//${
     window.location.host
@@ -197,21 +197,22 @@ const SnippetDisplay = ({
 
 class NewspaperResultDocument extends Component {
   getImageUrl(region, page, width) {
-    const issueId = this.props.doc.issue_id;
-    const pageNo = page.id.substring(1).padStart(5, "0");
-    const x = parseInt(BNL_10MM_TO_PIX_FACTOR * region.ulx);
-    const y = parseInt(BNL_10MM_TO_PIX_FACTOR * region.uly);
-    const w = parseInt(BNL_10MM_TO_PIX_FACTOR * (region.lrx - region.ulx));
-    const h = parseInt(BNL_10MM_TO_PIX_FACTOR * (region.lry - region.uly));
+    const bookId = this.props.doc.id;
+    const pageId = this.props.doc.id;
+    const pageNo = page.id.substring(5);
+    const x = parseInt(region.ulx);
+    const y = parseInt(region.uly);
+    const w = parseInt((region.lrx - region.ulx));
+    const h = parseInt((region.lry - region.uly));
     const regionStr = `${x},${y},${w},${h}`;
     const widthStr = width ? `${width},` : "max";
-    return `${IMAGE_API_BASE}/bnl:${issueId}_${pageNo}/${regionStr}/${widthStr}/0/default.jpg`;
+    return `${IMAGE_API_BASE_B}/${bookId}%2F${pageId}-${pageNo}.jpg/${regionStr}/${widthStr}/0/default.jpg`;
   }
 
   render() {
     const { hl, ocr_hl, query } = this.props;
     const doc = highlightDocument(this.props.doc, hl);
-    const manifestUri = `${APP_BASE}/iiif/presentation/bnl:${doc.issue_id}/manifest`;
+    const manifestUri = `${APP_BASE}/iiif/presentation/${doc.id}/manifest`;
     const pageIdx =
       parseInt(
         ocr_hl.snippets[0].pages[
