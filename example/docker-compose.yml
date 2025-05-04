@@ -33,6 +33,8 @@ services:
       - CFG_GOOGLE1000_PATH=/data/google1000
       - CFG_BNL_PATH=/data/bnl_lunion
       - CFG_APP_PATH=/iiif/presentation
+      - CFG_DIMAGE_API_BASE=https://iiif.beliana.sav.sk/iiif/2
+      - CFG_DIGILIB_PATH=/data/digilib
 
   frontend:
     build: frontend

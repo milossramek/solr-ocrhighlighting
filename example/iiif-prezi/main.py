@@ -14,6 +14,7 @@ from sanic.response import json, HTTPResponse, text
 import bnl
 import common
 import gbooks
+import digilib
 
 import logging
 
@@ -63,7 +64,7 @@ async def handle_exception(request, e):
     return text("MMMMMMMMMMMMMMMMMMMMMInternal Server Error", status=500)
 
 async def query_solr(query: str, fq: str):
-    print("MMMMMMMMMMMMMMMMMMMMM make_contentsearch_response", query, fq)
+    logger.info(f"MMMMMMMMMMMMMMMMMMMMM make_contentsearch_response {query}, {fq}")
     params = {
         'q': f'{query}',
         'df': 'ocr_text',
@@ -78,20 +79,25 @@ async def query_solr(query: str, fq: str):
     solr_url = f"{solr_base}/ocr/select"
     async with app.aiohttp_session.get(solr_url, params=params) as resp:
         result_doc = await resp.json()
-        ocr_hls = result_doc['ocrHighlighting']
+        #logger.info(f"MMMMMMMMMMMMMMMMMMMMM ocrHighlighting result_doc {result_doc}")
+        logger.info(f"MMMMMMMMMMMMMMMMMMMMM ocrHighlighting solr_url {solr_url}")
+        logger.info(f"MMMMMMMMMMMMMMMMMMMMM ocrHighlighting params {params}")
         out = {
             'numTotal': 0,
             'snippets': []
         }
-        for page_snips in ocr_hls.values():
-            snips = page_snips['ocr_text']['snippets']
-            out['snippets'].extend(snips)
-            out['numTotal'] += page_snips['ocr_text']['numTotal']
+        if 'ocrHighlighting' in result_doc:
+            ocr_hls = result_doc['ocrHighlighting']
+            for page_snips in ocr_hls.values():
+                snips = page_snips['ocr_text']['snippets']
+                out['snippets'].extend(snips)
+                out['numTotal'] += page_snips['ocr_text']['numTotal']
+        logger.info(f"MMMMMMMMMMMMMMMMMMMMM ocrHighlighting numTotal {out['numTotal']}")
         return out
 
 
 def make_contentsearch_response(hlresp, ignored_fields, vol_id, query, is_bnl):
-    print("MMMMMMMMMMMMMMMMMMMMM make_contentsearch_response", vol_id)
+    logger.info(f"MMMMMMMMMMMMMMMMMMMMM make_contentsearch_response, {vol_id}")
     protocol = app.config.get('PROTOCOL', 'http')
     location = app.config.get('SERVER_NAME', 'localhost:8008')
     app_path = app.config.get('APP_PATH', '')
@@ -155,9 +161,15 @@ async def finish(app, loop):
 async def search(request: Request, doc_id) -> HTTPResponse:
     query: str = request.args.get("q")
     if GBOOKS_PAT.match(doc_id) or BNL_ARTICLE_PAT.match(doc_id):
+        logger.info(f"MMMMMMMMMMMMMMMMMMMMM1 doc_id {doc_id}")
         fq = f'id:{doc_id.split(":")[1]}'
+        logger.info(f"MMMMMMMMMMMMMMMMMMMMM1 fq {fq}")
     elif BNL_ISSUE_PAT.match(doc_id):
         fq = f'issue_id:{doc_id.split(":")[1]}'
+    else:
+        logger.info(f"MMMMMMMMMMMMMMMMMMMMM3 doc_id {doc_id}")
+        fq = f'id:{doc_id.split(":")[1]}' if ":" in doc_id else f'id:{doc_id}'
+        logger.info(f"MMMMMMMMMMMMMMMMMMMMM3 fq {fq}")
     resp = await query_solr(query, fq)
     ignored_params = [k for k in request.args.keys() if k != "q"]
     return json(make_contentsearch_response(
@@ -168,14 +180,14 @@ async def search(request: Request, doc_id) -> HTTPResponse:
 @app.route('/<volume_id>/manifest', methods=['GET', 'OPTIONS'])
 async def get_manifest(request, volume_id):
     if GBOOKS_PAT.match(volume_id):
-        print("MMMMMMMMMMMMMMMMMMMMM1 get_manifest", volume_id)
+        logger.info(f"MMMMMMMMMMMMMMMMMMMMM1 get_manifest {volume_id}")
         return json(gbooks.make_manifest(app, volume_id))
     elif BNL_ISSUE_PAT.match(volume_id):
-        print("MMMMMMMMMMMMMMMMMMMMM2 get_manifest", volume_id)
+        logger.info(f"MMMMMMMMMMMMMMMMMMMMM2 get_manifest {volume_id}")
         return json(bnl.make_manifest(app, volume_id))
     else:
-        return json({'error': 'Unknown identifier'}, status=404)
-
+        logger.info(f"MMMMMMMMMMMMMMMMMMMMM3 get_manifest {volume_id}")
+        return json(digilib.make_manifest(app, volume_id))
 
 if __name__ == "__main__":
     port = 8008

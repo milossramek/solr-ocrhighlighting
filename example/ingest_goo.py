@@ -73,5 +73,4 @@ if __name__ == '__main__':
     gbooks_iter = gbooks_load_documents(Path(GOOGLE1000_PATH))
     batch = [it for it in gbooks_iter] 
     for book in batch:
-        trace()
         index_documents([book])

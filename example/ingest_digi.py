@@ -27,12 +27,13 @@ def book_load_pages(base_path, book):
     xlist.sort()
 
     book_data = {
-        "id": bid,
+        "id": jbook["identifikator"],
         'source': 'enu_kniznica', 
         'date': f'{jbook["rok"]}-01-01T00:00:00Z', 
         'ocr_text': "+".join(xlist),
         'author': [jbook['autor']],
         'title': [jbook['nazov']],
+        'language': [jbook['jazyk']],
     }
     return book_data
 
@@ -46,6 +47,9 @@ def index_document(docs):
         raise SolrException(json.loads(resp.read()), docs)
 
 if __name__ == '__main__':
-    book = "modern_physics_krane"
-    book_dir = book_load_pages(DIGILIB_PATH, book)
-    index_document([book_dir])
+    #book = "modern_physics_krane"
+    books = ["beliana9b","MFKrane"]
+    for book in books:
+        print("indexing", book)
+        book_dir = book_load_pages(DIGILIB_PATH, book)
+        index_document([book_dir])

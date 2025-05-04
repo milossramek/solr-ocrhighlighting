@@ -2,9 +2,10 @@ import copy
 from pathlib import Path
 
 import lxml.etree as etree
-
 from common import make_id, MANIFEST_TEMPLATE, CANVAS_TEMPLATE
 
+import logging
+logger = logging.getLogger(__name__)
 
 def make_manifest(app, vol_id):
     base_dir = Path(app.config.get('GOOGLE1000_PATH', '../data/google1000'))
@@ -17,6 +18,7 @@ def make_manifest(app, vol_id):
     image_api_base = app.config.get('IMAGE_API_BASE', 'http://localhost:8080')
     manifest = copy.deepcopy(MANIFEST_TEMPLATE)
     manifest['@id'] = f'{protocol}://{location}{app_path}/{manifest_path}'
+    logger.info(f"GGGGGG manifest @id {manifest['@id']}")
     manifest['service']['@id'] = f'{protocol}://{location}{app_path}{search_path}'
     manifest['sequences'][0]['@id'] = make_id(app, vol_id, 'sequence')
     tree = etree.parse(str(hocr_path))
@@ -30,6 +32,7 @@ def make_manifest(app, vol_id):
     for page_elem in tree.findall('.//div[@class="ocr_page"]'):
         canvas = copy.deepcopy(CANVAS_TEMPLATE)
         page_id = page_elem.attrib['id']
+        
         canvas['@id'] = f'{protocol}://{location}{app_path}/{vol_id}/canvas/{page_id}'
         page_idx = int(page_id.split('_')[-1]) - 1
         image_url = f'{image_api_base}/{vol_id}_{page_idx:04}'
