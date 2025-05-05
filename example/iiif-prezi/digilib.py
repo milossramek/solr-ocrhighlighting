@@ -147,12 +147,11 @@ def make_manifest(app, vol_id):
     manifest['sequences'][0]['@id'] = make_id(app, vol_id, 'sequence')
     manifest['attribution'] = "Digitálna knižnica EnÚ SAV"
     manifest['label'] = orig_manifest['label']
-    #pouzit @ v metadata
     #manifest['metadata'] = copy.deepcopy(orig_manifest['metadata'])
     for page_elem in orig_manifest['sequences'][0]['canvases']:
         canvas = copy.deepcopy(CANVAS_TEMPLATE)
         page_num = int(page_elem['label'].split(' ')[1])
-        page_id = "%s-%03d"%(vol_id, page_num)
+        page_id = "page_%03d"%page_num  #page numbering by page_xxx specified in alto xml files
         canvas['@id'] = f'{protocol}://{location}{app_path}/{vol_id}/canvas/{page_id}'
         canvas['images'][0]['on'] = canvas['@id']
         canvas["width"] = page_elem["width"]
