@@ -18,7 +18,7 @@ def make_manifest(app, vol_id):
     manifest = copy.deepcopy(MANIFEST_TEMPLATE)
     manifest['@id'] = f'{protocol}://{location}{app_path}/{manifest_path}'
     manifest['service']['@id'] = f'{protocol}://{location}{app_path}{search_path}'
-    manifest["behavior"] = "individuals"
+    #manifest["behavior"] = "individuals"
     manifest['sequences'][0]['@id'] = make_id(app, vol_id, 'sequence')
     manifest['attribution'] = "Digitálna knižnica EnÚ SAV"
     manifest['label'] = orig_manifest['label']

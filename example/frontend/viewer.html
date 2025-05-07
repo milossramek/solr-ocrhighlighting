@@ -21,13 +21,14 @@
         windows: [{
           loadedManifest: manifestId,
           canvasId,
-          thumbnailNavigationPosition: 'far-bottom',
+          thumbnailNavigationPosition: 'far-right',
           defaultSearchQuery: params.get('q'),
+          side_panel: false
         }],
         window: {
           allowFullscreen: true,
           hideSearchPanel: false,
-          sideBarOpenByDefault: true,
+          sideBarOpenByDefault: false
         }
       });
     </script>
