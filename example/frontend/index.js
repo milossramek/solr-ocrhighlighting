@@ -429,28 +429,6 @@ export default class App extends Component {
             outlined
             trailingIcon="search"
           />
-          <div className="source-picker">
-            <FormField>
-              <Checkbox
-                id="search-gbooks"
-                checked={sources.indexOf("gbooks") > -1}
-                onChange={(evt) =>
-                  this.onSourceToggle("gbooks", evt.target.checked)
-                }
-              />
-              <label for="search-gbooks">Google Books 1000</label>
-            </FormField>
-            <FormField>
-              <Checkbox
-                id="search-bnl"
-                checked={sources.indexOf("lunion") > -1}
-                onChange={(evt) =>
-                  this.onSourceToggle("lunion", evt.target.checked)
-                }
-              />
-              <label for="search-bnl">L'Union Newspaper</label>
-            </FormField>
-          </div>
           <FormField className="passage-slider">
             <label for="passage-slider">Number of snippets</label>
             <Slider
