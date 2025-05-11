@@ -148,7 +148,7 @@ const RegionDisplay = ({
   return (
     <div class="region-display">
       <div class="region-img-container">
-        <a href={viewerUrl} target="_blank" title="Open page in viewer">
+        <a href={viewerUrl} target="_blank" title="Stranu otvoriť v prehliadači Mirador">
           <img ref={ref} alt={region.text} src={getImageUrl(region, page)} />
         </a>
         {scaleFactor &&
@@ -195,18 +195,16 @@ const SnippetDisplay = ({
   );
 };
 
-class NewspaperResultDocument extends Component {
+class DigilibResultDocument extends Component {
   getImageUrl(region, page, width) {
     const bookId = this.props.doc.id;
-    const pageId = this.props.doc.id;
-    const pageNo = page.id.substring(5);
     const x = parseInt(region.ulx);
     const y = parseInt(region.uly);
     const w = parseInt((region.lrx - region.ulx));
     const h = parseInt((region.lry - region.uly));
     const regionStr = `${x},${y},${w},${h}`;
     const widthStr = width ? `${width},` : "max";
-    return `${IMAGE_API_BASE_B}/${bookId}%2F${pageId}-${pageNo}.jpg/${regionStr}/${widthStr}/0/default.jpg`;
+    return `${IMAGE_API_BASE_B}/${bookId}%2F${page.id}.jpg/${regionStr}/${widthStr}/0/default.jpg`;
   }
 
   render() {
@@ -227,7 +225,7 @@ class NewspaperResultDocument extends Component {
             <a
               className="highlightable"
               href={viewerUrl}
-              title="Open in viewer"
+              title="Otvoriť v prehliadači dokumentov Mirador"
               target="_blank"
               dangerouslySetInnerHTML={{ __html: doc.title }}
             />
@@ -238,7 +236,7 @@ class NewspaperResultDocument extends Component {
                 <a
                   className="highlightable"
                   href={viewerUrl}
-                  title="Open in viewer"
+                  title="Otvoriť v prehliadači dokumentov Mirador"
                   target="_blank"
                   dangerouslySetInnerHTML={{ __html: t }}
                 />
@@ -246,18 +244,8 @@ class NewspaperResultDocument extends Component {
             </Typography>
           )}
           <Typography subtitle1>
-            {ocr_hl ? ocr_hl.numTotal : "No"} matching passages in the article
-            found
+            Počet výsledkov v dokumente: {ocr_hl ? ocr_hl.numTotal : "Žiadne"}
           </Typography>
-          <ul className="metadata">
-            {/* TODO: Creators */}
-            <li>
-              <strong>Issue</strong> {doc.newspaper_part}
-            </li>
-            <li>
-              <strong>Published </strong> {doc.date}
-            </li>
-          </ul>
           {ocr_hl &&
             ocr_hl.snippets.map((snip) => (
               <SnippetDisplay
@@ -303,8 +291,7 @@ class GoogleResultDocument extends Component {
             />
           </Typography>
           <Typography subtitle1>
-            {ocr_hl ? ocr_hl.numTotal : "No"} matching passages in the text
-            found
+            Celkový počet výsledkov {ocr_hl ? ocr_hl.numTotal : "Žiadne"}
           </Typography>
           <ul className="metadata">
             {doc.author && (
@@ -422,15 +409,21 @@ export default class App extends Component {
           rel="stylesheet"
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
         />
+        <Typography tag="h1">
+          Digitálna knižnica EnÚ SAV
+        </Typography>
         <form className="search-form" onSubmit={this.onSubmit.bind(this)}>
           <TextField
             disabled={isSearchPending || sources.length === 0}
-            label="Search"
+            label="Hľadaný výraz"
             outlined
             trailingIcon="search"
           />
+        <Typography tag="p">
+          Hľadaný výraz: zadávajte s diakritikou, veľkosť písmen nerozhoduje. 
+        </Typography>
           <FormField className="passage-slider">
-            <label for="passage-slider">Number of snippets</label>
+            <label for="passage-slider">Max. počet výsledkov</label>
             <Slider
               discrete
               step={1}
@@ -445,8 +438,8 @@ export default class App extends Component {
         </form>
         {!isSearchPending && searchResults !== undefined && (
           <Typography tag="p" subtitle1>
-            Found matches in {searchResults.response.numFound} documents in{" "}
-            {searchResults.responseHeader.QTime}ms.
+            Hľadaný výraz nájdený v {searchResults.response.numFound} dokumentoch za{" "}
+            {searchResults.responseHeader.QTime} ms.
           </Typography>
         )}
         <section class="results">
@@ -470,7 +463,7 @@ export default class App extends Component {
                     query={queryParams.q}
                   />
                 ) : (
-                  <NewspaperResultDocument
+                  <DigilibResultDocument
                     key={key}
                     hl={hl}
                     ocr_hl={ocrHl}
