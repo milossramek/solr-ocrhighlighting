@@ -12,8 +12,16 @@ def make_manifest(app, vol_id):
     search_path = app.url_for('search', doc_id=vol_id)
     image_api_base = app.config.get('DIMAGE_API_BASE', 'https://iiif.beliana.sav.sk/iiif/2')
     
-    with open(base_dir / vol_id / f"{vol_id}.json", "r") as fp:
-        orig_manifest = json.load(fp)
+    try:
+        with open(base_dir / vol_id / f"{vol_id}.json", "r") as fp:
+            orig_manifest = json.load(fp)
+        label = orig_manifest['label']
+        elements = orig_manifest['sequences'][0]['canvases']
+    except:
+        with open(base_dir / vol_id / f"pages.json", "r") as fp:
+            orig_manifest = json.load(fp)
+        label = orig_manifest['title']
+        elements = orig_manifest['pages']
 
     manifest = copy.deepcopy(MANIFEST_TEMPLATE)
     manifest['@id'] = f'{protocol}://{location}{app_path}/{manifest_path}'
@@ -21,14 +29,14 @@ def make_manifest(app, vol_id):
     #manifest["behavior"] = "individuals"
     manifest['sequences'][0]['@id'] = make_id(app, vol_id, 'sequence')
     manifest['attribution'] = "Digitálna knižnica EnÚ SAV"
-    manifest['label'] = orig_manifest['label']
+    manifest['label'] = label
     #manifest['metadata'] = copy.deepcopy(orig_manifest['metadata'])
-    for page_elem in orig_manifest['sequences'][0]['canvases']:
+    for page_num, page_elem in enumerate(elements):
         canvas = copy.deepcopy(CANVAS_TEMPLATE)
-        page_num = int(page_elem['label'].split(' ')[1])
-        page_id = "page_%03d"%page_num  #page numbering by page_xxx specified in alto xml files
+        #page_num = int(page_elem['label'].split(' ')[1])
+        page_id = "page_%04d"%(page_num+1)  #page numbering by page_xxxx specified in alto xml files
         canvas['@id'] = f'{protocol}://{location}{app_path}/{vol_id}/canvas/{page_id}'
-        canvas['label'] = str(page_num)
+        canvas['label'] = str(page_num+1)
         canvas['images'][0]['on'] = canvas['@id']
         canvas["width"] = page_elem["width"]
         canvas["height"] = page_elem["height"]
