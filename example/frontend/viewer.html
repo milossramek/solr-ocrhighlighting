@@ -15,17 +15,17 @@
       var params = new URL(window.location.href).searchParams;
       var manifestId = params.get("manifest");
       var pageId = params.get("cv")
-      var canvasId = canvasId = manifestId.replace("/manifest", "/canvas/" + pageId)
+      var canvasId = manifestId.replace("/manifest", "/canvas/" + pageId)
       var miradorInstance = Mirador.viewer({
         id: 'mirador',
         windows: [{
           loadedManifest: manifestId,
-          canvasId,
           thumbnailNavigationPosition: 'far-right',
           defaultSearchQuery: params.get('q'),
-        panels: { // Configure which panels are visible in WindowSideBarButtons
-          info: false
-        },
+          canvasId,
+          panels: { // Configure which panels are visible in WindowSideBarButtons
+              info: false
+          },
         }],
         workspace: {
           showZoomControls: true, // Configure if zoom controls should be displayed by default
@@ -36,7 +36,8 @@
         window: {
           allowFullscreen: true,
           hideSearchPanel: false,
-          sideBarOpenByDefault: false
+          sideBarOpenByDefault: false,
+          switchCanvasOnSearch: false   // Make the viewer open at canvas specified by the cv parameter
         },
         theme: {
           palette: {
