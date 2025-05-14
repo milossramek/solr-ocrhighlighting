@@ -143,7 +143,7 @@ const RegionDisplay = ({
     onResize: ({ width }) => setScaleFactor(width / (region.lrx - region.ulx)),
   });
   //Normalize snippet letter size. To make smaller/larger, change the factor XX *
-  const [dynamicWidth, setDynamicWidth] = useState(80 * (region.lrx - region.ulx) / page.width);
+  const dynamicWidth = 80 * (region.lrx - region.ulx) / page.width;
   const viewerUrl = `/viewer/?manifest=${manifestUri}&cv=${page.id}&q=${query}`;
   return (
     <div class="region-display">
