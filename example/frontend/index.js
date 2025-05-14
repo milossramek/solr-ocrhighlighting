@@ -222,27 +222,11 @@ class DigilibResultDocument extends Component {
       <div class="result-document">
         <Elevation z={4}>
           <Typography tag="div" headline4>
-            <a
-              className="highlightable"
-              href={viewerUrl}
-              title="Otvoriť v prehliadači dokumentov Mirador"
-              target="_blank"
-              dangerouslySetInnerHTML={{ __html: doc.author[0]+", "+doc.title }}
-            />
+            <div style={{ color: 'blue' }} >
+              {doc.author[0]+", "+doc.title }
+            </div>
           </Typography>
-          {doc.subtitle && (
-            <Typography tag="div" subtitle1>
-              {doc.subtitle.map((t) => (
-                <a
-                  className="highlightable"
-                  href={viewerUrl}
-                  title="Otvoriť v prehliadači dokumentov Mirador"
-                  target="_blank"
-                  dangerouslySetInnerHTML={{ __html: t }}
-                />
-              ))}
-            </Typography>
-          )}
+          {doc.subtitle}
           <Typography subtitle1>
             Počet výsledkov v dokumente: {ocr_hl ? ocr_hl.numTotal : "Žiadne"}
           </Typography>
