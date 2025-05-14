@@ -228,7 +228,7 @@ class DigilibResultDocument extends Component {
               href={viewerUrl}
               title="Otvoriť v prehliadači dokumentov Mirador"
               target="_blank"
-              dangerouslySetInnerHTML={{ __html: doc.title }}
+              dangerouslySetInnerHTML={{ __html: doc.author[0]+", "+doc.title }}
             />
           </Typography>
           {doc.subtitle && (
