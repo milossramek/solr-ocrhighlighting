@@ -143,13 +143,14 @@ const RegionDisplay = ({
   const { ref } = useResizeObserver({
     onResize: ({ width }) => setScaleFactor(width / (region.lrx - region.ulx)),
   });
-
+  //Normalize snippet letter size. To make smaller/larger, change the factor XX *
+  const [dynamicWidth, setDynamicWidth] = useState(80 * (region.lrx - region.ulx) / page.width);
   const viewerUrl = `/viewer/?manifest=${manifestUri}&cv=${page.id}&q=${query}`;
   return (
     <div class="region-display">
       <div class="region-img-container">
         <a href={viewerUrl} target="_blank" title="Stranu otvoriť v prehliadači Mirador">
-          <img ref={ref} alt={region.text} src={getImageUrl(region, page)} />
+          <img ref={ref} alt={region.text} src={getImageUrl(region, page)} style={{ width: `${dynamicWidth}vw` }}  />
         </a>
         {scaleFactor &&
           highlights.map((hl) => (
