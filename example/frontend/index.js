@@ -27,7 +27,6 @@ var PARAMS = {
   "hl.fl": "title,subtitle,author,publisher",
   "hl.ocr.fl": "ocr_text",
 };
-var IMAGE_API_BASE = "https://ocrhl.jbaiter.de/iiif/image/v3";
 var IMAGE_API_BASE_B = "https://iiif.beliana.sav.sk/iiif/2";
 if (typeof window !== "undefined") {
   var APP_BASE = `${window.location.protocol || "http:"}//${
@@ -263,77 +262,6 @@ class DigilibResultDocument extends Component {
   }
 }
 
-class GoogleResultDocument extends Component {
-  getImageUrl(region, page, width) {
-    const volId = this.props.doc.id;
-    const pageId = String(parseInt(page.id.split("_")[1]) - 1).padStart(4, "0");
-    const regionStr = `${region.ulx},${region.uly},${region.lrx - region.ulx},${
-      region.lry - region.uly
-    }`;
-    const widthStr = width ? `${width},` : "max";
-    return `${IMAGE_API_BASE}/gbooks:${volId}_${pageId}/${regionStr}/${widthStr}/0/default.jpg`;
-  }
-
-  render() {
-    const { hl, ocr_hl, query } = this.props;
-    const doc = highlightDocument(this.props.doc, hl);
-    const manifestUri = `${APP_BASE}/iiif/presentation/gbooks:${doc.id}/manifest`;
-    const viewerUrl = `/viewer/?manifest=${manifestUri}&q=${query}`;
-    return (
-      <div class="result-document">
-        <Elevation z={4}>
-          <Typography tag="div" headline4>
-            <a
-              className="highlightable"
-              href={viewerUrl}
-              title="Open in viewer"
-              target="_blank"
-              dangerouslySetInnerHTML={{ __html: doc.title }}
-            />
-          </Typography>
-          <Typography subtitle1>
-            Celkový počet výsledkov {ocr_hl ? ocr_hl.numTotal : "Žiadne"}
-          </Typography>
-          <ul className="metadata">
-            {doc.author && (
-              <li>
-                <strong>Created by</strong>{" "}
-                <span
-                  className="highlightable"
-                  dangerouslySetInnerHTML={{ __html: doc.author[0] }}
-                />
-              </li>
-            )}
-            {doc.publisher && (
-              <li>
-                <strong>Published in</strong> {doc.date.split("-")[0]}{" "}
-                <strong>by</strong>{" "}
-                <span
-                  className="highlightable"
-                  dangerouslySetInnerHTML={{ __html: doc.publisher }}
-                />
-              </li>
-            )}
-            <li>
-              <strong>Language:</strong> {doc.language}
-            </li>
-          </ul>
-          {ocr_hl &&
-            ocr_hl.snippets.map((snip) => (
-              <SnippetDisplay
-                snippet={snip}
-                docId={doc.id}
-                query={query}
-                manifestUri={manifestUri}
-                getImageUrl={this.getImageUrl.bind(this)}
-              />
-            ))}
-        </Elevation>
-      </div>
-    );
-  }
-}
-
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -455,15 +383,6 @@ export default class App extends Component {
                 };
               })
               .map(({ key, doc, hl, ocrHl }) =>
-                doc.source === "gbooks" ? (
-                  <GoogleResultDocument
-                    key={key}
-                    hl={hl}
-                    ocr_hl={ocrHl}
-                    doc={doc}
-                    query={queryParams.q}
-                  />
-                ) : (
                   <DigilibResultDocument
                     key={key}
                     hl={hl}
@@ -471,7 +390,6 @@ export default class App extends Component {
                     doc={doc}
                     query={queryParams.q}
                   />
-                )
               )}
         </section>
       </main>
