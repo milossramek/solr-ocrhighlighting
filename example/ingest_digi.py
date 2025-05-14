@@ -97,3 +97,7 @@ if __name__ == '__main__':
         print("indexing", book)
         book_dir = book_load_pages(DIGILIB_PATH, book)
         index_document([book_dir])
+'''
+Delete all 'ocr' content
+curl -X POST -H 'Content-Type: text/xml' -d '<delete><query>*:*</query></delete>' "http://localhost:8983/solr/ocr/update?commit=true"
+'''
