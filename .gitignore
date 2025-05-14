@@ -1,9 +1,10 @@
 target
 .idea
 *.iml
+*.swp
 dependency-reduced-pom.xml
-example/data/google1000/*.hocr
-example/data/bnl_lunion/15*
+example/data/digilib/*
+example/data/pdfsources/*
 example/frontend/node_modules
 site
 __pycache__
