@@ -12,6 +12,18 @@
     <div id="mirador" style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;"></div>
     <script>document.write("<script type='text/javascript' src='https://unpkg.com/mirador@3.4.3/dist/mirador.min.js?v=" + Date.now() + "'><\/script>");</script>
     <script type="text/javascript">
+
+    function setPageTitleFromUrl() {
+      const url = new URL(window.location.href);
+      const titleParam = url.searchParams.get('title');
+      if (titleParam) {
+        document.title = titleParam;
+      }
+    }
+
+    // Call the function when the page loads
+    window.onload = setPageTitleFromUrl;
+
       var params = new URL(window.location.href).searchParams;
       var manifestId = params.get("manifest");
       var pageId = params.get("cv")

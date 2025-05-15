@@ -133,6 +133,7 @@ const HighlightDisplay = ({ scaleFactor, highlight }) => {
 const RegionDisplay = ({
   manifestUri,
   page,
+  title,
   region,
   highlights,
   query,
@@ -144,7 +145,7 @@ const RegionDisplay = ({
   });
   //Normalize snippet letter size. To make smaller/larger, change the factor XX *
   const dynamicWidth = 80 * (region.lrx - region.ulx) / page.width;
-  const viewerUrl = `/viewer/?manifest=${manifestUri}&cv=${page.id}&q=${query}`;
+  const viewerUrl = `/viewer/?manifest=${manifestUri}&cv=${page.id}&q=${query}&title=${title}`;
   return (
     <div class="region-display">
       <div class="region-img-container">
@@ -168,6 +169,7 @@ const RegionDisplay = ({
 const SnippetDisplay = ({
   snippet,
   docId,
+  docTitle,
   manifestUri,
   query,
   getImageUrl,
@@ -185,6 +187,7 @@ const SnippetDisplay = ({
             getImageUrl={getImageUrl}
             manifestUri={manifestUri}
             page={page}
+            title={docTitle}
             region={region}
             highlights={highlights}
             query={query}
@@ -235,6 +238,7 @@ class DigilibResultDocument extends Component {
               <SnippetDisplay
                 snippet={snip}
                 docId={doc.issue_id}
+                docTitle={doc.title}
                 query={query}
                 manifestUri={manifestUri}
                 getImageUrl={this.getImageUrl.bind(this)}
