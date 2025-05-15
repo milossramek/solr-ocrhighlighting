@@ -11,6 +11,7 @@ def make_manifest(app, vol_id):
     manifest_path = app.url_for('get_manifest', volume_id=vol_id)
     search_path = app.url_for('search', doc_id=vol_id)
     image_api_base = app.config.get('IMAGE_API_BASE', '')
+    attribution = app.config.get('ATTRIBUTION', '')
     
     try:
         with open(base_dir / vol_id / f"{vol_id}.json", "r") as fp:
@@ -28,7 +29,7 @@ def make_manifest(app, vol_id):
     manifest['service']['@id'] = f'{protocol}://{location}{app_path}{search_path}'
     #manifest["behavior"] = "individuals"
     manifest['sequences'][0]['@id'] = make_id(app, vol_id, 'sequence')
-    manifest['attribution'] = "Digitálna knižnica EnÚ SAV"
+    manifest['attribution'] = attribution
     manifest['label'] = label
     #manifest['metadata'] = copy.deepcopy(orig_manifest['metadata'])
     for page_num, page_elem in enumerate(elements):

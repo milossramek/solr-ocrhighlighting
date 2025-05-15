@@ -30,6 +30,7 @@ services:
       - CFG_SOLR_BASE=http://solr:8983/solr
       - CFG_SERVER_NAME=localhost:8181
       - CFG_IMAGE_API_BASE=https://iiif.beliana.sav.sk/iiif/2
+      - CFG_ATTRIBUTION=Digitálna knižnica EnÚ SAV
       - CFG_APP_PATH=/iiif/presentation
       - CFG_DIGILIB_PATH=/data/digilib
 
