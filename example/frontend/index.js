@@ -347,6 +347,7 @@ export default class App extends Component {
               discrete
               step={1}
               value={this.state.queryParams["hl.snippets"]}
+              min={1}
               max={50}
               onChange={this.onSliderChange.bind(this)}
               id="passage-slider"
