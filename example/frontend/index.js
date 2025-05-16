@@ -27,13 +27,14 @@ var PARAMS = {
   "hl.fl": "title,subtitle,author,publisher",
   "hl.ocr.fl": "ocr_text",
 };
-var IMAGE_API_BASE_B = "https://iiif.beliana.sav.sk/iiif/2";
+var IMAGE_API_BASE_B = "__CFG_IMAGE_API_BASE__";
+
 if (typeof window !== "undefined") {
   var APP_BASE = `${window.location.protocol || "http:"}//${
     window.location.host
   }`;
 } else {
-  var APP_BASE = "http://localhost:8181"; // TODO: Read from environment?
+  var APP_BASE = "__CFG_SERVER_URL__";
 }
 
 // Largely a 1:1 port of https://github.com/ZeeCoder/use-resize-observer (MIT-licensed) to Preact
@@ -260,6 +261,7 @@ export default class App extends Component {
         "hl.snippets": 10,
         "hl.weightMatches": true,
         hl: "on",
+        rows: 1000,
       },
       sources: ["gbooks", "lunion"],
       searchResults: undefined,
@@ -327,7 +329,7 @@ export default class App extends Component {
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
         />
         <Typography tag="h1">
-          Digitálna knižnica EnÚ SAV
+          __CFG_LIBRARY_NAME__
         </Typography>
         <form className="search-form" onSubmit={this.onSubmit.bind(this)}>
           <TextField

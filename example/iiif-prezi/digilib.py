@@ -4,14 +4,14 @@ from pathlib import Path
 from common import make_id, MANIFEST_TEMPLATE, CANVAS_TEMPLATE, NSMAP
 
 def make_manifest(app, vol_id):
-    base_dir = Path(app.config.get('DIGILIB_PATH', '../data/digilib'))
-    protocol = app.config.get('PROTOCOL', 'http')
-    location = app.config.get('SERVER_NAME', 'localhost:8181')
+    base_dir = Path(app.config.get('DIGILIB_PATH'))                     #/data/digilib
+    server_url = app.config.get('SERVER_URL')                           #'http://localhost:8181'
+    #app_path = app.config.get('APP_PATH'))                             #'/iiif/presentation'
     app_path = app.config.get('APP_PATH', '/iiif/presentation')
     manifest_path = app.url_for('get_manifest', volume_id=vol_id)
     search_path = app.url_for('search', doc_id=vol_id)
-    image_api_base = app.config.get('IMAGE_API_BASE', '')
-    attribution = app.config.get('ATTRIBUTION', '')
+    image_api_base = app.config.get('IMAGE_API_BASE')                   #iiif server url`
+    attribution = app.config.get('LIBRARY_NAME')                        #Library name
     
     try:
         with open(base_dir / vol_id / f"{vol_id}.json", "r") as fp:
@@ -25,8 +25,8 @@ def make_manifest(app, vol_id):
         elements = orig_manifest['pages']
 
     manifest = copy.deepcopy(MANIFEST_TEMPLATE)
-    manifest['@id'] = f'{protocol}://{location}{app_path}/{manifest_path}'
-    manifest['service']['@id'] = f'{protocol}://{location}{app_path}{search_path}'
+    manifest['@id'] = f'{server_url}{app_path}/{manifest_path}'
+    manifest['service']['@id'] = f'{server_url}{app_path}{search_path}'
     #manifest["behavior"] = "individuals"
     manifest['sequences'][0]['@id'] = make_id(app, vol_id, 'sequence')
     manifest['attribution'] = attribution
@@ -36,7 +36,7 @@ def make_manifest(app, vol_id):
         canvas = copy.deepcopy(CANVAS_TEMPLATE)
         #page_num = int(page_elem['label'].split(' ')[1])
         page_id = "page_%04d"%(page_num+1)  #page numbering by page_xxxx specified in alto xml files
-        canvas['@id'] = f'{protocol}://{location}{app_path}/{vol_id}/canvas/{page_id}'
+        canvas['@id'] = f'{server_url}{app_path}/{vol_id}/canvas/{page_id}'
         canvas['label'] = str(page_num+1)
         canvas['images'][0]['on'] = canvas['@id']
         canvas["width"] = page_elem["width"]

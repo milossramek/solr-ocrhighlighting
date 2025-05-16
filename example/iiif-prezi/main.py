@@ -15,15 +15,8 @@ import common
 import digilib
 
 import logging
-
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 logger = logging.getLogger(__name__)
-
-# The BNL ALTO encodes coordinates as 1/10mm values.
-# To convert to pixels, we divide the dots-per-inch of the image (300 in both
-# horizontal and vertical direction for all images in the corpus) by the number
-# of 1/10mm units in an inch
-BNL_10_TO_PIX_FACTOR = 300 / 254
 
 HL_PAT = re.compile("<em>(.+?)</em>")
 RESPONSE_TEMPLATE = {
@@ -87,12 +80,11 @@ async def query_solr(query: str, fq: str):
 
 
 def make_contentsearch_response(hlresp, ignored_fields, vol_id, query):
-    protocol = app.config.get('PROTOCOL', 'http')
-    location = app.config.get('SERVER_NAME', 'localhost:8008')
-    app_path = app.config.get('APP_PATH', '')
+    server_url = app.config.get('SERVER_URL')
+    app_path = app.config.get('APP_PATH')
     search_path = app.url_for('search', doc_id=vol_id, q=query)
     doc = copy.deepcopy(RESPONSE_TEMPLATE)
-    doc['@id'] = f'{protocol}://{location}{app_path}/{search_path}'
+    doc['@id'] = f'{server_url}{app_path}/{search_path}'
     doc['within']['total'] = hlresp['numTotal']
     doc['within']['ignored'] = ignored_fields
     for snip in hlresp['snippets']:
@@ -124,7 +116,7 @@ def make_contentsearch_response(hlresp, ignored_fields, vol_id, query):
                         "@type": "cnt:ContentAsText",
                         "chars": hlbox['text'] 
                     },
-                    "on": f'{protocol}://{location}{app_path}/{vol_id}/canvas/{page}#xywh={x},{y},{w},{h}'}
+                    "on": f'{server_url}{app_path}/{vol_id}/canvas/{page}#xywh={x},{y},{w},{h}'}
                 doc['resources'].append(anno)
             doc['hits'].append({
                 '@type': 'search:Hit',

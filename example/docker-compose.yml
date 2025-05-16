@@ -28,14 +28,23 @@ services:
       - ./data:/data
     environment:
       - CFG_SOLR_BASE=http://solr:8983/solr
-      - CFG_SERVER_NAME=localhost:8181
-      - CFG_IMAGE_API_BASE=https://iiif.beliana.sav.sk/iiif/2
-      - CFG_ATTRIBUTION=Digitálna knižnica EnÚ SAV
+      - CFG_IMAGE_API_BASE
+      - CFG_LIBRARY_NAME
+      - CFG_SERVER_URL
       - CFG_APP_PATH=/iiif/presentation
       - CFG_DIGILIB_PATH=/data/digilib
 
   frontend:
-    build: frontend
+    build:
+      context: ./frontend
+      args:
+        CFG_IMAGE_API_BASE: ${CFG_IMAGE_API_BASE}
+        CFG_LIBRARY_NAME: ${CFG_LIBRARY_NAME}
+        CFG_SERVER_URL: ${CFG_SERVER_URL}
+    environment:
+      - CFG_IMAGE_API_BASE
+      - CFG_LIBRARY_NAME
+      - CFG_SERVER_URL
     ports:
       - "8181:80"
     depends_on:
