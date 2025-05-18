@@ -32,7 +32,7 @@ services:
       - CFG_LIBRARY_NAME
       - CFG_SERVER_URL
       - CFG_APP_PATH=/iiif/presentation
-      - CFG_DIGILIB_PATH=/data/digilib
+      - CFG_DIGILIB_PATH
 
   frontend:
     build:

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-import json, getopt, sys, csv
+import json, getopt, sys, csv, os
 from pathlib import Path
 from urllib import request
+from dotenv import load_dotenv
 from ipdb import set_trace as trace
 
 languages = {
@@ -12,9 +13,9 @@ languages = {
         "fra": "FR",
         }
 
-
-DIGILIB_PATH = './data/digilib'
-SOLR_HOST = 'localhost:8983'
+load_dotenv()
+DIGILIB_PATH = os.getenv('CFG_DIGILIB_PATH') # 'data/digilib'
+SOLR_HOST = os.getenv('CFG_SOLR_HOST')       # 'localhost:8983
 
 class SolrException(Exception):
     def __init__(self, resp, payload):
@@ -43,7 +44,7 @@ def book_load_pages(base_path, book):
 
 def index_document(docs):
     req = request.Request(
-        "http://{}/solr/ocr/update?softCommit=true".format(SOLR_HOST),
+        "{}/solr/ocr/update?softCommit=true".format(SOLR_HOST),
         data=json.dumps(docs).encode('utf8'),
         headers={'Content-Type': 'application/json'})
     resp = request.urlopen(req)
@@ -86,7 +87,6 @@ def loadCSV(ifile):
             yield rdir
 
 if __name__ == '__main__':
-    #book = "modern_physics_krane"
     booksDir = parsecmd()
     if not booksDir:
         usage()

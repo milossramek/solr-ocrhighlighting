@@ -4,7 +4,8 @@ from pathlib import Path
 from common import make_id, MANIFEST_TEMPLATE, CANVAS_TEMPLATE, NSMAP
 
 def make_manifest(app, vol_id):
-    base_dir = Path(app.config.get('DIGILIB_PATH'))                     #/data/digilib
+    base_dir = Path("/")
+    base_dir = base_dir /app.config.get('DIGILIB_PATH')                 #/data/digilib
     server_url = app.config.get('SERVER_URL')                           #'http://localhost:8181'
     #app_path = app.config.get('APP_PATH'))                             #'/iiif/presentation'
     app_path = app.config.get('APP_PATH', '/iiif/presentation')
