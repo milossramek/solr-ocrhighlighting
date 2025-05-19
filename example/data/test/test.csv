@@ -1,0 +1,3 @@
+ID/DirName;Format;Source path;Title;Author;Tesseract language;Year;Publisher
+Bolle_Wunder_I;pdf;data/test/Bolle_Wunder_part1.pdf;Wunder der Vererbung I; Fritz Bolle;deu;1951;Verlag Sebastian Lutz
+Bolle_Wunder_II;jpg;data/test/Bolle_Wunder_part2;Wunder der Vererbung II; Fritz Bolle;deu;1951;Verlag Sebastian Lutz

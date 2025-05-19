@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v3#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/standards/alto/ns-v3# http://www.loc.gov/alto/v3/alto-3-0.xsd">
+	<Description>
+		<MeasurementUnit>pixel</MeasurementUnit>
+		<sourceImageInformation>
+			<fileName>page_0018018.jpg</fileName>
+		</sourceImageInformation>
+		<OCRProcessing ID="OCR_0">
+			<ocrProcessingStep>
+				<processingSoftware>
+					<softwareName>tesseract 5.3.4</softwareName>
+				</processingSoftware>
+			</ocrProcessingStep>
+		</OCRProcessing>
+	</Description>
+	<Layout>
+		<Page WIDTH="715" HEIGHT="1000" PHYSICAL_IMG_NR="0" ID="page_0018">
+			<PrintSpace HPOS="0" VPOS="0" WIDTH="715" HEIGHT="1000">
+				<ComposedBlock ID="cblock_0" HPOS="26" VPOS="58" WIDTH="637" HEIGHT="616">
+					<TextBlock ID="block_0" HPOS="26" VPOS="58" WIDTH="634" HEIGHT="210">
+						<TextLine ID="line_0" HPOS="26" VPOS="58" WIDTH="633" HEIGHT="19">
+							<String ID="string_0" HPOS="26" VPOS="61" WIDTH="26" HEIGHT="14" WC="0.84" CONTENT="ein"/><SP WIDTH="7" VPOS="61" HPOS="52"/>
+							<String ID="string_1" HPOS="59" VPOS="59" WIDTH="83" HEIGHT="16" WC="0.96" CONTENT="einzelnes"/><SP WIDTH="10" VPOS="59" HPOS="142"/>
+							<String ID="string_2" HPOS="152" VPOS="58" WIDTH="35" HEIGHT="16" WC="0.96" CONTENT="Gen"/><SP WIDTH="9" VPOS="58" HPOS="187"/>
+							<String ID="string_3" HPOS="196" VPOS="59" WIDTH="30" HEIGHT="14" WC="0.96" CONTENT="mit"/><SP WIDTH="10" VPOS="59" HPOS="226"/>
+							<String ID="string_4" HPOS="236" VPOS="59" WIDTH="53" HEIGHT="15" WC="0.96" CONTENT="einem"/><SP WIDTH="10" VPOS="59" HPOS="289"/>
+							<String ID="string_5" HPOS="299" VPOS="59" WIDTH="84" HEIGHT="15" WC="0.93" CONTENT="einzelnen"/><SP WIDTH="9" VPOS="59" HPOS="383"/>
+							<String ID="string_6" HPOS="392" VPOS="59" WIDTH="114" HEIGHT="16" WC="0.93" CONTENT="Partikelchen"/><SP WIDTH="10" VPOS="59" HPOS="506"/>
+							<String ID="string_7" HPOS="516" VPOS="60" WIDTH="53" HEIGHT="15" WC="0.96" CONTENT="seiner"/><SP WIDTH="10" VPOS="60" HPOS="569"/>
+							<String ID="string_8" HPOS="579" VPOS="59" WIDTH="80" HEIGHT="18" WC="0.96" CONTENT="Strahlen,"/>
+						</TextLine>
+						<TextLine ID="line_1" HPOS="27" VPOS="79" WIDTH="632" HEIGHT="20">
+							<String ID="string_9" HPOS="27" VPOS="82" WIDTH="28" HEIGHT="14" WC="0.96" CONTENT="mit"/><SP WIDTH="9" VPOS="82" HPOS="55"/>
+							<String ID="string_10" HPOS="64" VPOS="81" WIDTH="53" HEIGHT="15" WC="0.96" CONTENT="einem"/><SP WIDTH="10" VPOS="81" HPOS="117"/>
+							<String ID="string_11" HPOS="127" VPOS="80" WIDTH="73" HEIGHT="19" WC="0.93" CONTENT="einzigen"/><SP WIDTH="10" VPOS="80" HPOS="200"/>
+							<String ID="string_12" HPOS="210" VPOS="79" WIDTH="102" HEIGHT="20" WC="0.92" CONTENT="Lichtquant,"/><SP WIDTH="11" VPOS="79" HPOS="312"/>
+							<String ID="string_13" HPOS="323" VPOS="80" WIDTH="85" HEIGHT="19" WC="0.96" CONTENT="getroffen,"/><SP WIDTH="10" VPOS="80" HPOS="408"/>
+							<String ID="string_14" HPOS="418" VPOS="81" WIDTH="33" HEIGHT="15" WC="0.96" CONTENT="und"/><SP WIDTH="10" VPOS="81" HPOS="451"/>
+							<String ID="string_15" HPOS="461" VPOS="82" WIDTH="36" HEIGHT="14" WC="0.96" CONTENT="eine"/><SP WIDTH="10" VPOS="82" HPOS="497"/>
+							<String ID="string_16" HPOS="507" VPOS="81" WIDTH="60" HEIGHT="15" WC="0.96" CONTENT="andere"/><SP WIDTH="10" VPOS="81" HPOS="567"/>
+							<String ID="string_17" HPOS="577" VPOS="81" WIDTH="82" HEIGHT="15" WC="0.96" CONTENT="Mutation"/>
+						</TextLine>
+						<TextLine ID="line_2" HPOS="27" VPOS="100" WIDTH="633" HEIGHT="21">
+							<String ID="string_18" HPOS="27" VPOS="108" WIDTH="31" HEIGHT="9" WC="0.96" CONTENT="war"/><SP WIDTH="14" VPOS="108" HPOS="58"/>
+							<String ID="string_19" HPOS="72" VPOS="102" WIDTH="26" HEIGHT="15" WC="0.96" CONTENT="die"/><SP WIDTH="12" VPOS="102" HPOS="98"/>
+							<String ID="string_20" HPOS="110" VPOS="100" WIDTH="55" HEIGHT="20" WC="0.93" CONTENT="Folge."/><SP WIDTH="14" VPOS="100" HPOS="165"/>
+							<String ID="string_21" HPOS="179" VPOS="101" WIDTH="69" HEIGHT="15" WC="0.89" CONTENT="Freilih"/><SP WIDTH="13" VPOS="101" HPOS="248"/>
+							<String ID="string_22" HPOS="261" VPOS="110" WIDTH="21" HEIGHT="2" WC="0.92" CONTENT="—"/><SP WIDTH="13" VPOS="110" HPOS="282"/>
+							<String ID="string_23" HPOS="295" VPOS="102" WIDTH="67" HEIGHT="15" WC="0.96" CONTENT="niemals"/><SP WIDTH="14" VPOS="102" HPOS="362"/>
+							<String ID="string_24" HPOS="376" VPOS="102" WIDTH="45" HEIGHT="15" WC="0.96" CONTENT="hatte"/><SP WIDTH="14" VPOS="102" HPOS="421"/>
+							<String ID="string_25" HPOS="435" VPOS="108" WIDTH="18" HEIGHT="9" WC="0.93" CONTENT="er"/><SP WIDTH="13" VPOS="108" HPOS="453"/>
+							<String ID="string_26" HPOS="466" VPOS="108" WIDTH="109" HEIGHT="13" WC="0.92" CONTENT="voraussagen"/><SP WIDTH="15" VPOS="108" HPOS="575"/>
+							<String ID="string_27" HPOS="590" VPOS="102" WIDTH="70" HEIGHT="17" WC="0.96" CONTENT="können,"/>
+						</TextLine>
+						<TextLine ID="line_3" HPOS="27" VPOS="122" WIDTH="632" HEIGHT="19">
+							<String ID="string_28" HPOS="27" VPOS="129" WIDTH="41" HEIGHT="10" WC="0.96" CONTENT="was"/><SP WIDTH="12" VPOS="129" HPOS="68"/>
+							<String ID="string_29" HPOS="80" VPOS="123" WIDTH="27" HEIGHT="15" WC="0.96" CONTENT="bei"/><SP WIDTH="13" VPOS="123" HPOS="107"/>
+							<String ID="string_30" HPOS="120" VPOS="122" WIDTH="29" HEIGHT="15" WC="0.96" CONTENT="der"/><SP WIDTH="12" VPOS="122" HPOS="149"/>
+							<String ID="string_31" HPOS="161" VPOS="122" WIDTH="83" HEIGHT="15" WC="0.96" CONTENT="Mutation"/><SP WIDTH="10" VPOS="122" HPOS="244"/>
+							<String ID="string_32" HPOS="254" VPOS="122" WIDTH="89" HEIGHT="16" WC="0.86" CONTENT="‘entstehen"/><SP WIDTH="13" VPOS="122" HPOS="343"/>
+							<String ID="string_33" HPOS="356" VPOS="123" WIDTH="62" HEIGHT="18" WC="0.96" CONTENT="würde;"/><SP WIDTH="14" VPOS="123" HPOS="418"/>
+							<String ID="string_34" HPOS="432" VPOS="123" WIDTH="39" HEIGHT="15" WC="0.96" CONTENT="aber"/><SP WIDTH="13" VPOS="123" HPOS="471"/>
+							<String ID="string_35" HPOS="484" VPOS="124" WIDTH="38" HEIGHT="15" WC="0.96" CONTENT="auch"/><SP WIDTH="14" VPOS="124" HPOS="522"/>
+							<String ID="string_36" HPOS="536" VPOS="124" WIDTH="16" HEIGHT="14" WC="0.96" CONTENT="in"/><SP WIDTH="13" VPOS="124" HPOS="552"/>
+							<String ID="string_37" HPOS="565" VPOS="124" WIDTH="29" HEIGHT="15" WC="0.96" CONTENT="der"/><SP WIDTH="12" VPOS="124" HPOS="594"/>
+							<String ID="string_38" HPOS="606" VPOS="124" WIDTH="53" HEIGHT="15" WC="0.96" CONTENT="freien"/>
+						</TextLine>
+						<TextLine ID="line_4" HPOS="27" VPOS="143" WIDTH="632" HEIGHT="21">
+							<String ID="string_39" HPOS="27" VPOS="145" WIDTH="52" HEIGHT="15" WC="0.96" CONTENT="Natur"/><SP WIDTH="13" VPOS="145" HPOS="79"/>
+							<String ID="string_40" HPOS="92" VPOS="144" WIDTH="51" HEIGHT="19" WC="0.96" CONTENT="gehen"/><SP WIDTH="14" VPOS="144" HPOS="143"/>
+							<String ID="string_41" HPOS="157" VPOS="144" WIDTH="26" HEIGHT="15" WC="0.96" CONTENT="die"/><SP WIDTH="13" VPOS="144" HPOS="183"/>
+							<String ID="string_42" HPOS="196" VPOS="143" WIDTH="104" HEIGHT="16" WC="0.96" CONTENT="Mutationen"/><SP WIDTH="13" VPOS="143" HPOS="300"/>
+							<String ID="string_43" HPOS="313" VPOS="144" WIDTH="75" HEIGHT="15" WC="0.93" CONTENT="offenbar"/><SP WIDTH="13" VPOS="144" HPOS="388"/>
+							<String ID="string_44" HPOS="401" VPOS="145" WIDTH="50" HEIGHT="19" WC="0.93" CONTENT="regel-"/><SP WIDTH="14" VPOS="145" HPOS="451"/>
+							<String ID="string_45" HPOS="465" VPOS="145" WIDTH="33" HEIGHT="15" WC="0.93" CONTENT="und"/><SP WIDTH="13" VPOS="145" HPOS="498"/>
+							<String ID="string_46" HPOS="511" VPOS="144" WIDTH="55" HEIGHT="16" WC="0.92" CONTENT="ziellos"/><SP WIDTH="14" VPOS="144" HPOS="566"/>
+							<String ID="string_47" HPOS="580" VPOS="151" WIDTH="29" HEIGHT="9" WC="0.96" CONTENT="vor"/><SP WIDTH="14" VPOS="151" HPOS="609"/>
+							<String ID="string_48" HPOS="623" VPOS="145" WIDTH="36" HEIGHT="15" WC="0.96" CONTENT="sich."/>
+						</TextLine>
+						<TextLine ID="line_5" HPOS="27" VPOS="165" WIDTH="632" HEIGHT="20">
+							<String ID="string_49" HPOS="27" VPOS="166" WIDTH="43" HEIGHT="16" WC="0.94" CONTENT="Doch"/><SP WIDTH="7" VPOS="166" HPOS="70"/>
+							<String ID="string_50" HPOS="77" VPOS="167" WIDTH="16" HEIGHT="18" WC="0.94" CONTENT="je"/><SP WIDTH="7" VPOS="167" HPOS="93"/>
+							<String ID="string_51" HPOS="100" VPOS="165" WIDTH="50" HEIGHT="15" WC="0.95" CONTENT="tiefer"/><SP WIDTH="8" VPOS="165" HPOS="150"/>
+							<String ID="string_52" HPOS="158" VPOS="165" WIDTH="26" HEIGHT="15" WC="0.96" CONTENT="die"/><SP WIDTH="7" VPOS="165" HPOS="184"/>
+							<String ID="string_53" HPOS="191" VPOS="165" WIDTH="78" HEIGHT="15" WC="0.96" CONTENT="Forscher"/><SP WIDTH="8" VPOS="165" HPOS="269"/>
+							<String ID="string_54" HPOS="277" VPOS="166" WIDTH="16" HEIGHT="14" WC="0.96" CONTENT="in"/><SP WIDTH="8" VPOS="166" HPOS="293"/>
+							<String ID="string_55" HPOS="301" VPOS="165" WIDTH="26" HEIGHT="15" WC="0.96" CONTENT="die"/><SP WIDTH="7" VPOS="165" HPOS="327"/>
+							<String ID="string_56" HPOS="334" VPOS="166" WIDTH="112" HEIGHT="15" WC="0.96" CONTENT="Geheimnisse"/><SP WIDTH="8" VPOS="166" HPOS="446"/>
+							<String ID="string_57" HPOS="454" VPOS="166" WIDTH="29" HEIGHT="15" WC="0.96" CONTENT="der"/><SP WIDTH="8" VPOS="166" HPOS="483"/>
+							<String ID="string_58" HPOS="491" VPOS="166" WIDTH="127" HEIGHT="15" WC="0.96" CONTENT="Chromosomen"/><SP WIDTH="9" VPOS="166" HPOS="618"/>
+							<String ID="string_59" HPOS="627" VPOS="166" WIDTH="32" HEIGHT="15" WC="0.96" CONTENT="und"/>
+						</TextLine>
+						<TextLine ID="line_6" HPOS="27" VPOS="186" WIDTH="632" HEIGHT="20">
+							<String ID="string_60" HPOS="27" VPOS="188" WIDTH="28" HEIGHT="15" WC="0.96" CONTENT="der"/><SP WIDTH="8" VPOS="188" HPOS="55"/>
+							<String ID="string_61" HPOS="63" VPOS="187" WIDTH="44" HEIGHT="15" WC="0.96" CONTENT="Gene"/><SP WIDTH="9" VPOS="187" HPOS="107"/>
+							<String ID="string_62" HPOS="116" VPOS="186" WIDTH="102" HEIGHT="19" WC="0.96" CONTENT="eindringen,"/><SP WIDTH="8" VPOS="186" HPOS="218"/>
+							<String ID="string_63" HPOS="226" VPOS="186" WIDTH="46" HEIGHT="15" WC="0.96" CONTENT="desto"/><SP WIDTH="8" VPOS="186" HPOS="272"/>
+							<String ID="string_64" HPOS="280" VPOS="187" WIDTH="46" HEIGHT="15" WC="0.96" CONTENT="mehr"/><SP WIDTH="9" VPOS="187" HPOS="326"/>
+							<String ID="string_65" HPOS="335" VPOS="188" WIDTH="48" HEIGHT="18" WC="0.96" CONTENT="steigt"/><SP WIDTH="9" VPOS="188" HPOS="383"/>
+							<String ID="string_66" HPOS="392" VPOS="187" WIDTH="38" HEIGHT="15" WC="0.96" CONTENT="auch"/><SP WIDTH="9" VPOS="187" HPOS="430"/>
+							<String ID="string_67" HPOS="439" VPOS="187" WIDTH="26" HEIGHT="15" WC="0.96" CONTENT="die"/><SP WIDTH="8" VPOS="187" HPOS="465"/>
+							<String ID="string_68" HPOS="473" VPOS="187" WIDTH="79" HEIGHT="18" WC="0.95" CONTENT="Aussicht,"/><SP WIDTH="9" VPOS="187" HPOS="552"/>
+							<String ID="string_69" HPOS="561" VPOS="193" WIDTH="36" HEIGHT="9" WC="0.96" CONTENT="man"/><SP WIDTH="9" VPOS="193" HPOS="597"/>
+							<String ID="string_70" HPOS="606" VPOS="187" WIDTH="53" HEIGHT="15" WC="0.96" CONTENT="werde"/>
+						</TextLine>
+						<TextLine ID="line_7" HPOS="27" VPOS="207" WIDTH="633" HEIGHT="21">
+							<String ID="string_71" HPOS="27" VPOS="210" WIDTH="43" HEIGHT="14" WC="0.95" CONTENT="eines"/><SP WIDTH="9" VPOS="210" HPOS="70"/>
+							<String ID="string_72" HPOS="79" VPOS="208" WIDTH="51" HEIGHT="19" WC="0.96" CONTENT="Tages"/><SP WIDTH="10" VPOS="208" HPOS="130"/>
+							<String ID="string_73" HPOS="140" VPOS="208" WIDTH="28" HEIGHT="15" WC="0.96" CONTENT="das"/><SP WIDTH="9" VPOS="208" HPOS="168"/>
+							<String ID="string_74" HPOS="177" VPOS="207" WIDTH="63" HEIGHT="20" WC="0.95" CONTENT="Erbgut"/><SP WIDTH="9" VPOS="207" HPOS="240"/>
+							<String ID="string_75" HPOS="249" VPOS="213" WIDTH="17" HEIGHT="10" WC="0.95" CONTENT="so"/><SP WIDTH="10" VPOS="213" HPOS="266"/>
+							<String ID="string_76" HPOS="276" VPOS="214" WIDTH="52" HEIGHT="13" WC="0.96" CONTENT="genau"/><SP WIDTH="9" VPOS="214" HPOS="328"/>
+							<String ID="string_77" HPOS="337" VPOS="208" WIDTH="70" HEIGHT="18" WC="0.96" CONTENT="kennen,"/><SP WIDTH="9" VPOS="208" HPOS="407"/>
+							<String ID="string_78" HPOS="416" VPOS="208" WIDTH="31" HEIGHT="15" WC="0.96" CONTENT="daß"/><SP WIDTH="9" VPOS="208" HPOS="447"/>
+							<String ID="string_79" HPOS="456" VPOS="215" WIDTH="37" HEIGHT="8" WC="0.96" CONTENT="man"/><SP WIDTH="10" VPOS="215" HPOS="493"/>
+							<String ID="string_80" HPOS="503" VPOS="209" WIDTH="38" HEIGHT="15" WC="0.96" CONTENT="auch"/><SP WIDTH="10" VPOS="209" HPOS="541"/>
+							<String ID="string_81" HPOS="551" VPOS="209" WIDTH="109" HEIGHT="19" WC="0.93" CONTENT="„gerichtete“"/>
+						</TextLine>
+						<TextLine ID="line_8" HPOS="27" VPOS="229" WIDTH="633" HEIGHT="20">
+							<String ID="string_82" HPOS="27" VPOS="230" WIDTH="103" HEIGHT="16" WC="0.96" CONTENT="Mutationen"/><SP WIDTH="7" VPOS="230" HPOS="130"/>
+							<String ID="string_83" HPOS="137" VPOS="229" WIDTH="42" HEIGHT="15" WC="0.96" CONTENT="wird"/><SP WIDTH="9" VPOS="229" HPOS="179"/>
+							<String ID="string_84" HPOS="188" VPOS="229" WIDTH="75" HEIGHT="18" WC="0.96" CONTENT="erzielen,"/><SP WIDTH="9" VPOS="229" HPOS="263"/>
+							<String ID="string_85" HPOS="272" VPOS="229" WIDTH="31" HEIGHT="15" WC="0.96" CONTENT="daß"/><SP WIDTH="9" VPOS="229" HPOS="303"/>
+							<String ID="string_86" HPOS="312" VPOS="235" WIDTH="37" HEIGHT="9" WC="0.96" CONTENT="man"/><SP WIDTH="9" VPOS="235" HPOS="349"/>
+							<String ID="string_87" HPOS="358" VPOS="230" WIDTH="33" HEIGHT="14" WC="0.96" CONTENT="also"/><SP WIDTH="10" VPOS="230" HPOS="391"/>
+							<String ID="string_88" HPOS="401" VPOS="230" WIDTH="25" HEIGHT="15" WC="0.93" CONTENT="die"/><SP WIDTH="9" VPOS="230" HPOS="426"/>
+							<String ID="string_89" HPOS="435" VPOS="230" WIDTH="101" HEIGHT="19" WC="0.92" CONTENT="Erbanlagen"/><SP WIDTH="9" VPOS="230" HPOS="536"/>
+							<String ID="string_90" HPOS="545" VPOS="230" WIDTH="66" HEIGHT="15" WC="0.96" CONTENT="bewußt"/><SP WIDTH="9" VPOS="230" HPOS="611"/>
+							<String ID="string_91" HPOS="620" VPOS="230" WIDTH="40" HEIGHT="15" WC="0.96" CONTENT="wird"/>
+						</TextLine>
+						<TextLine ID="line_9" HPOS="28" VPOS="250" WIDTH="631" HEIGHT="18">
+							<String ID="string_92" HPOS="28" VPOS="251" WIDTH="90" HEIGHT="16" WC="0.96" CONTENT="verändern"/><SP WIDTH="10" VPOS="251" HPOS="118"/>
+							<String ID="string_93" HPOS="128" VPOS="250" WIDTH="66" HEIGHT="16" WC="0.93" CONTENT="können"/><SP WIDTH="9" VPOS="250" HPOS="194"/>
+							<String ID="string_94" HPOS="203" VPOS="259" WIDTH="21" HEIGHT="2" WC="0.93" CONTENT="—"/><SP WIDTH="9" VPOS="259" HPOS="224"/>
+							<String ID="string_95" HPOS="233" VPOS="251" WIDTH="36" HEIGHT="15" WC="0.97" CONTENT="eine"/><SP WIDTH="10" VPOS="251" HPOS="269"/>
+							<String ID="string_96" HPOS="279" VPOS="250" WIDTH="79" HEIGHT="18" WC="0.96" CONTENT="Aussicht,"/><SP WIDTH="10" VPOS="250" HPOS="358"/>
+							<String ID="string_97" HPOS="368" VPOS="251" WIDTH="26" HEIGHT="15" WC="0.96" CONTENT="die"/><SP WIDTH="9" VPOS="251" HPOS="394"/>
+							<String ID="string_98" HPOS="403" VPOS="251" WIDTH="82" HEIGHT="15" WC="0.93" CONTENT="wahrhaft"/><SP WIDTH="10" VPOS="251" HPOS="485"/>
+							<String ID="string_99" HPOS="495" VPOS="251" WIDTH="97" HEIGHT="15" WC="0.92" CONTENT="schwindeln"/><SP WIDTH="9" VPOS="251" HPOS="592"/>
+							<String ID="string_100" HPOS="601" VPOS="251" WIDTH="58" HEIGHT="15" WC="0.96" CONTENT="macht!"/>
+						</TextLine>
+					</TextBlock>
+					<TextBlock ID="block_1" HPOS="28" VPOS="271" WIDTH="635" HEIGHT="403">
+						<TextLine ID="line_10" HPOS="47" VPOS="271" WIDTH="613" HEIGHT="20">
+							<String ID="string_101" HPOS="47" VPOS="271" WIDTH="105" HEIGHT="20" WC="0.92" CONTENT="Drosophila,"/><SP WIDTH="12" VPOS="271" HPOS="152"/>
+							<String ID="string_102" HPOS="164" VPOS="272" WIDTH="26" HEIGHT="15" WC="0.93" CONTENT="die"/><SP WIDTH="12" VPOS="272" HPOS="190"/>
+							<String ID="string_103" HPOS="202" VPOS="271" WIDTH="91" HEIGHT="15" WC="0.91" CONTENT="millionen-"/><SP WIDTH="12" VPOS="271" HPOS="293"/>
+							<String ID="string_104" HPOS="305" VPOS="272" WIDTH="33" HEIGHT="15" WC="0.93" CONTENT="und"/><SP WIDTH="13" VPOS="272" HPOS="338"/>
+							<String ID="string_105" HPOS="351" VPOS="272" WIDTH="162" HEIGHT="15" WC="0.90" CONTENT="abermillionenfach"/><SP WIDTH="13" VPOS="272" HPOS="513"/>
+							<String ID="string_106" HPOS="526" VPOS="273" WIDTH="92" HEIGHT="18" WC="0.92" CONTENT="gezüchtete,"/><SP WIDTH="18" VPOS="273" HPOS="618"/>
+							<String ID="string_107" HPOS="636" VPOS="279" WIDTH="24" HEIGHT="12" WC="0.93" CONTENT="ge-"/>
+						</TextLine>
+						<TextLine ID="line_11" HPOS="28" VPOS="293" WIDTH="633" HEIGHT="20">
+							<String ID="string_108" HPOS="28" VPOS="295" WIDTH="72" HEIGHT="17" WC="0.92" CONTENT="kreuzte,"/><SP WIDTH="11" VPOS="295" HPOS="100"/>
+							<String ID="string_109" HPOS="111" VPOS="294" WIDTH="17" HEIGHT="14" WC="0.93" CONTENT="in"/><SP WIDTH="11" VPOS="294" HPOS="128"/>
+							<String ID="string_110" HPOS="139" VPOS="293" WIDTH="202" HEIGHT="15" WC="0.82" CONTENT="Mutationensversuchen"/><SP WIDTH="13" VPOS="293" HPOS="341"/>
+							<String ID="string_111" HPOS="354" VPOS="293" WIDTH="111" HEIGHT="20" WC="0.87" CONTENT="geschundene"/><SP WIDTH="12" VPOS="293" HPOS="465"/>
+							<String ID="string_112" HPOS="477" VPOS="294" WIDTH="81" HEIGHT="19" WC="0.91" CONTENT="Taufliege"/><SP WIDTH="13" VPOS="294" HPOS="558"/>
+							<String ID="string_113" HPOS="571" VPOS="294" WIDTH="38" HEIGHT="15" WC="0.93" CONTENT="aber"/><SP WIDTH="12" VPOS="294" HPOS="609"/>
+							<String ID="string_114" HPOS="621" VPOS="294" WIDTH="40" HEIGHT="18" WC="0.91" CONTENT="barg"/>
+						</TextLine>
+						<TextLine ID="line_12" HPOS="28" VPOS="313" WIDTH="632" HEIGHT="21">
+							<String ID="string_115" HPOS="28" VPOS="316" WIDTH="39" HEIGHT="15" WC="0.96" CONTENT="noch"/><SP WIDTH="12" VPOS="316" HPOS="67"/>
+							<String ID="string_116" HPOS="79" VPOS="315" WIDTH="46" HEIGHT="15" WC="0.96" CONTENT="mehr"/><SP WIDTH="13" VPOS="315" HPOS="125"/>
+							<String ID="string_117" HPOS="138" VPOS="321" WIDTH="20" HEIGHT="9" WC="0.96" CONTENT="an"/><SP WIDTH="12" VPOS="321" HPOS="158"/>
+							<String ID="string_118" HPOS="170" VPOS="313" WIDTH="134" HEIGHT="20" WC="0.96" CONTENT="Überraschungen:"/><SP WIDTH="30" VPOS="313" HPOS="304"/>
+							<String ID="string_119" HPOS="334" VPOS="315" WIDTH="49" HEIGHT="15" WC="0.96" CONTENT="Eines"/><SP WIDTH="13" VPOS="315" HPOS="383"/>
+							<String ID="string_120" HPOS="396" VPOS="315" WIDTH="50" HEIGHT="19" WC="0.96" CONTENT="Tages"/><SP WIDTH="13" VPOS="315" HPOS="446"/>
+							<String ID="string_121" HPOS="459" VPOS="315" WIDTH="62" HEIGHT="15" WC="0.96" CONTENT="konnte"/><SP WIDTH="12" VPOS="315" HPOS="521"/>
+							<String ID="string_122" HPOS="533" VPOS="321" WIDTH="37" HEIGHT="9" WC="0.96" CONTENT="man"/><SP WIDTH="13" VPOS="321" HPOS="570"/>
+							<String ID="string_123" HPOS="583" VPOS="315" WIDTH="26" HEIGHT="15" WC="0.93" CONTENT="die"/><SP WIDTH="13" VPOS="315" HPOS="609"/>
+							<String ID="string_124" HPOS="622" VPOS="315" WIDTH="38" HEIGHT="15" WC="0.93" CONTENT="Erb-"/>
+						</TextLine>
+						<TextLine ID="line_13" HPOS="29" VPOS="336" WIDTH="631" HEIGHT="20">
+							<String ID="string_125" HPOS="29" VPOS="337" WIDTH="67" HEIGHT="19" WC="0.96" CONTENT="anlagen"/><SP WIDTH="14" VPOS="337" HPOS="96"/>
+							<String ID="string_126" HPOS="110" VPOS="336" WIDTH="27" HEIGHT="16" WC="0.93" CONTENT="bei"/><SP WIDTH="15" VPOS="336" HPOS="137"/>
+							<String ID="string_127" HPOS="152" VPOS="336" WIDTH="99" HEIGHT="19" WC="0.92" CONTENT="Drosophila"/><SP WIDTH="16" VPOS="336" HPOS="251"/>
+							<String ID="string_128" HPOS="267" VPOS="342" WIDTH="47" HEIGHT="13" WC="0.96" CONTENT="sogar"/><SP WIDTH="15" VPOS="342" HPOS="314"/>
+							<String ID="string_129" HPOS="329" VPOS="336" WIDTH="55" HEIGHT="15" WC="0.96" CONTENT="sehen!"/><SP WIDTH="16" VPOS="336" HPOS="384"/>
+							<String ID="string_130" HPOS="400" VPOS="336" WIDTH="32" HEIGHT="15" WC="0.96" CONTENT="Das"/><SP WIDTH="16" VPOS="336" HPOS="432"/>
+							<String ID="string_131" HPOS="448" VPOS="336" WIDTH="79" HEIGHT="15" WC="0.96" CONTENT="erscheint"/><SP WIDTH="16" VPOS="336" HPOS="527"/>
+							<String ID="string_132" HPOS="543" VPOS="337" WIDTH="75" HEIGHT="15" WC="0.91" CONTENT="zunächst"/><SP WIDTH="15" VPOS="337" HPOS="618"/>
+							<String ID="string_133" HPOS="633" VPOS="342" WIDTH="27" HEIGHT="9" WC="0.91" CONTENT="un-"/>
+						</TextLine>
+						<TextLine ID="line_14" HPOS="29" VPOS="357" WIDTH="632" HEIGHT="21">
+							<String ID="string_134" HPOS="29" VPOS="358" WIDTH="84" HEIGHT="20" WC="0.91" CONTENT="glaublich,"/><SP WIDTH="12" VPOS="358" HPOS="113"/>
+							<String ID="string_135" HPOS="125" VPOS="363" WIDTH="47" HEIGHT="10" WC="0.96" CONTENT="wenn"/><SP WIDTH="13" VPOS="363" HPOS="172"/>
+							<String ID="string_136" HPOS="185" VPOS="363" WIDTH="38" HEIGHT="9" WC="0.96" CONTENT="man"/><SP WIDTH="13" VPOS="363" HPOS="223"/>
+							<String ID="string_137" HPOS="236" VPOS="357" WIDTH="78" HEIGHT="18" WC="0.96" CONTENT="bedenkt,"/><SP WIDTH="13" VPOS="357" HPOS="314"/>
+							<String ID="string_138" HPOS="327" VPOS="358" WIDTH="31" HEIGHT="14" WC="0.96" CONTENT="daß"/><SP WIDTH="14" VPOS="358" HPOS="358"/>
+							<String ID="string_139" HPOS="372" VPOS="358" WIDTH="50" HEIGHT="15" WC="0.96" CONTENT="selbst"/><SP WIDTH="13" VPOS="358" HPOS="422"/>
+							<String ID="string_140" HPOS="435" VPOS="359" WIDTH="22" HEIGHT="13" WC="0.96" CONTENT="im"/><SP WIDTH="13" VPOS="359" HPOS="457"/>
+							<String ID="string_141" HPOS="470" VPOS="358" WIDTH="82" HEIGHT="15" WC="0.96" CONTENT="stärksten"/><SP WIDTH="12" VPOS="358" HPOS="552"/>
+							<String ID="string_142" HPOS="564" VPOS="358" WIDTH="97" HEIGHT="18" WC="0.96" CONTENT="Mikroskop"/>
+						</TextLine>
+						<TextLine ID="line_15" HPOS="29" VPOS="378" WIDTH="632" HEIGHT="20">
+							<String ID="string_143" HPOS="29" VPOS="381" WIDTH="25" HEIGHT="14" WC="0.93" CONTENT="ein"/><SP WIDTH="12" VPOS="381" HPOS="54"/>
+							<String ID="string_144" HPOS="66" VPOS="379" WIDTH="203" HEIGHT="19" WC="0.90" CONTENT="Taufliegenchromosom,"/><SP WIDTH="13" VPOS="379" HPOS="269"/>
+							<String ID="string_145" HPOS="282" VPOS="379" WIDTH="28" HEIGHT="15" WC="0.96" CONTENT="das"/><SP WIDTH="14" VPOS="379" HPOS="310"/>
+							<String ID="string_146" HPOS="324" VPOS="378" WIDTH="84" HEIGHT="16" WC="0.96" CONTENT="höchstens"/><SP WIDTH="14" VPOS="378" HPOS="408"/>
+							<String ID="string_147" HPOS="422" VPOS="379" WIDTH="34" HEIGHT="15" WC="0.96" CONTENT="drei"/><SP WIDTH="13" VPOS="379" HPOS="456"/>
+							<String ID="string_148" HPOS="469" VPOS="379" WIDTH="25" HEIGHT="15" WC="0.96" CONTENT="bis"/><SP WIDTH="13" VPOS="379" HPOS="494"/>
+							<String ID="string_149" HPOS="507" VPOS="380" WIDTH="35" HEIGHT="14" WC="0.92" CONTENT="vier"/><SP WIDTH="12" VPOS="380" HPOS="542"/>
+							<String ID="string_150" HPOS="554" VPOS="379" WIDTH="107" HEIGHT="15" WC="0.92" CONTENT="Tausendstel"/>
+						</TextLine>
+						<TextLine ID="line_16" HPOS="30" VPOS="400" WIDTH="631" HEIGHT="19">
+							<String ID="string_151" HPOS="30" VPOS="402" WIDTH="42" HEIGHT="15" WC="0.93" CONTENT="eines"/><SP WIDTH="9" VPOS="402" HPOS="72"/>
+							<String ID="string_152" HPOS="81" VPOS="401" WIDTH="103" HEIGHT="15" WC="0.92" CONTENT="Millimeters"/><SP WIDTH="10" VPOS="401" HPOS="184"/>
+							<String ID="string_153" HPOS="194" VPOS="400" WIDTH="37" HEIGHT="19" WC="0.95" CONTENT="lang"/><SP WIDTH="9" VPOS="400" HPOS="231"/>
+							<String ID="string_154" HPOS="240" VPOS="401" WIDTH="26" HEIGHT="17" WC="0.96" CONTENT="ist,"/><SP WIDTH="9" VPOS="401" HPOS="266"/>
+							<String ID="string_155" HPOS="275" VPOS="406" WIDTH="31" HEIGHT="9" WC="0.96" CONTENT="nur"/><SP WIDTH="9" VPOS="406" HPOS="306"/>
+							<String ID="string_156" HPOS="315" VPOS="400" WIDTH="22" HEIGHT="15" WC="0.96" CONTENT="als"/><SP WIDTH="10" VPOS="400" HPOS="337"/>
+							<String ID="string_157" HPOS="347" VPOS="400" WIDTH="51" HEIGHT="15" WC="0.96" CONTENT="Strich"/><SP WIDTH="10" VPOS="400" HPOS="398"/>
+							<String ID="string_158" HPOS="408" VPOS="400" WIDTH="84" HEIGHT="15" WC="0.96" CONTENT="erscheint."/><SP WIDTH="8" VPOS="400" HPOS="492"/>
+							<String ID="string_159" HPOS="500" VPOS="400" WIDTH="37" HEIGHT="15" WC="0.93" CONTENT="Nun"/><SP WIDTH="9" VPOS="400" HPOS="537"/>
+							<String ID="string_160" HPOS="546" VPOS="409" WIDTH="21" HEIGHT="1" WC="0.92" CONTENT="—"/><SP WIDTH="9" VPOS="409" HPOS="567"/>
+							<String ID="string_161" HPOS="576" VPOS="406" WIDTH="15" HEIGHT="9" WC="0.96" CONTENT="es"/><SP WIDTH="9" VPOS="406" HPOS="591"/>
+							<String ID="string_162" HPOS="600" VPOS="400" WIDTH="61" HEIGHT="15" WC="0.96" CONTENT="scheint"/>
+						</TextLine>
+						<TextLine ID="line_17" HPOS="30" VPOS="421" WIDTH="631" HEIGHT="20">
+							<String ID="string_163" HPOS="30" VPOS="422" WIDTH="96" HEIGHT="18" WC="0.96" CONTENT="tatsächlich,"/><SP WIDTH="10" VPOS="422" HPOS="126"/>
+							<String ID="string_164" HPOS="136" VPOS="422" WIDTH="22" HEIGHT="15" WC="0.96" CONTENT="als"/><SP WIDTH="10" VPOS="422" HPOS="158"/>
+							<String ID="string_165" HPOS="168" VPOS="422" WIDTH="42" HEIGHT="15" WC="0.96" CONTENT="habe"/><SP WIDTH="10" VPOS="422" HPOS="210"/>
+							<String ID="string_166" HPOS="220" VPOS="422" WIDTH="26" HEIGHT="14" WC="0.96" CONTENT="die"/><SP WIDTH="9" VPOS="422" HPOS="246"/>
+							<String ID="string_167" HPOS="255" VPOS="421" WIDTH="53" HEIGHT="15" WC="0.96" CONTENT="Natur"/><SP WIDTH="9" VPOS="421" HPOS="308"/>
+							<String ID="string_168" HPOS="317" VPOS="421" WIDTH="26" HEIGHT="15" WC="0.91" CONTENT="die"/><SP WIDTH="9" VPOS="421" HPOS="343"/>
+							<String ID="string_169" HPOS="352" VPOS="422" WIDTH="83" HEIGHT="19" WC="0.90" CONTENT="Taufliege"/><SP WIDTH="9" VPOS="422" HPOS="435"/>
+							<String ID="string_170" HPOS="444" VPOS="427" WIDTH="31" HEIGHT="9" WC="0.96" CONTENT="nur"/><SP WIDTH="10" VPOS="427" HPOS="475"/>
+							<String ID="string_171" HPOS="485" VPOS="422" WIDTH="26" HEIGHT="14" WC="0.96" CONTENT="für"/><SP WIDTH="10" VPOS="422" HPOS="511"/>
+							<String ID="string_172" HPOS="521" VPOS="422" WIDTH="26" HEIGHT="14" WC="0.93" CONTENT="die"/><SP WIDTH="9" VPOS="422" HPOS="547"/>
+							<String ID="string_173" HPOS="556" VPOS="421" WIDTH="105" HEIGHT="16" WC="0.92" CONTENT="Erbforscher"/>
+						</TextLine>
+						<TextLine ID="line_18" HPOS="30" VPOS="443" WIDTH="631" HEIGHT="21">
+							<String ID="string_174" HPOS="30" VPOS="443" WIDTH="94" HEIGHT="21" WC="0.96" CONTENT="geschaffen:"/><SP WIDTH="10" VPOS="443" HPOS="124"/>
+							<String ID="string_175" HPOS="134" VPOS="443" WIDTH="121" HEIGHT="19" WC="0.95" CONTENT="Ausgerechnet"/><SP WIDTH="9" VPOS="443" HPOS="255"/>
+							<String ID="string_176" HPOS="264" VPOS="444" WIDTH="16" HEIGHT="14" WC="0.95" CONTENT="in"/><SP WIDTH="9" VPOS="444" HPOS="280"/>
+							<String ID="string_177" HPOS="289" VPOS="443" WIDTH="47" HEIGHT="14" WC="0.93" CONTENT="ihren"/><SP WIDTH="9" VPOS="443" HPOS="336"/>
+							<String ID="string_178" HPOS="345" VPOS="443" WIDTH="188" HEIGHT="19" WC="0.92" CONTENT="Speicheldrüsenzellen"/><SP WIDTH="8" VPOS="443" HPOS="533"/>
+							<String ID="string_179" HPOS="541" VPOS="443" WIDTH="53" HEIGHT="19" WC="0.93" CONTENT="liegen"/><SP WIDTH="9" VPOS="443" HPOS="594"/>
+							<String ID="string_180" HPOS="603" VPOS="444" WIDTH="58" HEIGHT="13" WC="0.93" CONTENT="riesen-"/>
+						</TextLine>
+						<TextLine ID="line_19" HPOS="30" VPOS="464" WIDTH="631" HEIGHT="20">
+							<String ID="string_181" HPOS="30" VPOS="466" WIDTH="34" HEIGHT="15" WC="0.94" CONTENT="haft"/><SP WIDTH="13" VPOS="466" HPOS="64"/>
+							<String ID="string_182" HPOS="77" VPOS="465" WIDTH="105" HEIGHT="19" WC="0.93" CONTENT="vergrößerte"/><SP WIDTH="13" VPOS="465" HPOS="182"/>
+							<String ID="string_183" HPOS="195" VPOS="464" WIDTH="92" HEIGHT="18" WC="0.92" CONTENT="Zellkerne,"/><SP WIDTH="13" VPOS="464" HPOS="287"/>
+							<String ID="string_184" HPOS="300" VPOS="464" WIDTH="33" HEIGHT="15" WC="0.96" CONTENT="und"/><SP WIDTH="13" VPOS="464" HPOS="333"/>
+							<String ID="string_185" HPOS="346" VPOS="465" WIDTH="17" HEIGHT="14" WC="0.96" CONTENT="in"/><SP WIDTH="13" VPOS="465" HPOS="363"/>
+							<String ID="string_186" HPOS="376" VPOS="464" WIDTH="49" HEIGHT="15" WC="0.96" CONTENT="ihnen"/><SP WIDTH="13" VPOS="464" HPOS="425"/>
+							<String ID="string_187" HPOS="438" VPOS="464" WIDTH="133" HEIGHT="18" WC="0.93" CONTENT="Chromosomen,"/><SP WIDTH="13" VPOS="464" HPOS="571"/>
+							<String ID="string_188" HPOS="584" VPOS="464" WIDTH="77" HEIGHT="15" WC="0.92" CONTENT="hundert-"/>
+						</TextLine>
+						<TextLine ID="line_20" HPOS="29" VPOS="485" WIDTH="632" HEIGHT="20">
+							<String ID="string_189" HPOS="29" VPOS="487" WIDTH="32" HEIGHT="15" WC="0.93" CONTENT="und"/><SP WIDTH="13" VPOS="487" HPOS="61"/>
+							<String ID="string_190" HPOS="74" VPOS="486" WIDTH="138" HEIGHT="15" WC="0.91" CONTENT="zweihundermal"/><SP WIDTH="13" VPOS="486" HPOS="212"/>
+							<String ID="string_191" HPOS="225" VPOS="486" WIDTH="59" HEIGHT="19" WC="0.96" CONTENT="größer"/><SP WIDTH="12" VPOS="486" HPOS="284"/>
+							<String ID="string_192" HPOS="296" VPOS="486" WIDTH="23" HEIGHT="15" WC="0.96" CONTENT="als"/><SP WIDTH="13" VPOS="486" HPOS="319"/>
+							<String ID="string_193" HPOS="332" VPOS="486" WIDTH="26" HEIGHT="15" WC="0.96" CONTENT="die"/><SP WIDTH="12" VPOS="486" HPOS="358"/>
+							<String ID="string_194" HPOS="370" VPOS="485" WIDTH="105" HEIGHT="18" WC="0.96" CONTENT="„normalen“"/><SP WIDTH="13" VPOS="485" HPOS="475"/>
+							<String ID="string_195" HPOS="488" VPOS="486" WIDTH="16" HEIGHT="14" WC="0.96" CONTENT="in"/><SP WIDTH="13" VPOS="486" HPOS="504"/>
+							<String ID="string_196" HPOS="517" VPOS="486" WIDTH="31" HEIGHT="14" WC="0.93" CONTENT="den"/><SP WIDTH="13" VPOS="486" HPOS="548"/>
+							<String ID="string_197" HPOS="561" VPOS="485" WIDTH="100" HEIGHT="15" WC="0.91" CONTENT="Keimzellen"/>
+						</TextLine>
+						<TextLine ID="line_21" HPOS="29" VPOS="507" WIDTH="632" HEIGHT="19">
+							<String ID="string_198" HPOS="29" VPOS="517" WIDTH="20" HEIGHT="2" WC="0.92" CONTENT="—"/><SP WIDTH="13" VPOS="517" HPOS="49"/>
+							<String ID="string_199" HPOS="62" VPOS="513" WIDTH="58" HEIGHT="10" WC="0.96" CONTENT="unsere"/><SP WIDTH="14" VPOS="513" HPOS="120"/>
+							<String ID="string_200" HPOS="134" VPOS="508" WIDTH="65" HEIGHT="15" WC="0.93" CONTENT="hintere"/><SP WIDTH="14" VPOS="508" HPOS="199"/>
+							<String ID="string_201" HPOS="213" VPOS="507" WIDTH="128" HEIGHT="19" WC="0.92" CONTENT="Umschlagseite"/><SP WIDTH="15" VPOS="507" HPOS="341"/>
+							<String ID="string_202" HPOS="356" VPOS="508" WIDTH="41" HEIGHT="18" WC="0.96" CONTENT="zeigt"/><SP WIDTH="15" VPOS="508" HPOS="397"/>
+							<String ID="string_203" HPOS="412" VPOS="508" WIDTH="26" HEIGHT="14" WC="0.96" CONTENT="ein"/><SP WIDTH="15" VPOS="508" HPOS="438"/>
+							<String ID="string_204" HPOS="453" VPOS="507" WIDTH="52" HEIGHT="15" WC="0.85" CONTENT="Photo"/><SP WIDTH="15" VPOS="507" HPOS="505"/>
+							<String ID="string_205" HPOS="520" VPOS="507" WIDTH="62" HEIGHT="15" WC="0.93" CONTENT="solcher"/><SP WIDTH="15" VPOS="507" HPOS="582"/>
+							<String ID="string_206" HPOS="597" VPOS="507" WIDTH="64" HEIGHT="14" WC="0.92" CONTENT="Riesen-"/>
+						</TextLine>
+						<TextLine ID="line_22" HPOS="31" VPOS="528" WIDTH="631" HEIGHT="20">
+							<String ID="string_207" HPOS="31" VPOS="530" WIDTH="125" HEIGHT="15" WC="0.91" CONTENT="chromosomen:"/><SP WIDTH="15" VPOS="530" HPOS="156"/>
+							<String ID="string_208" HPOS="171" VPOS="529" WIDTH="25" HEIGHT="15" WC="0.96" CONTENT="Da"/><SP WIDTH="15" VPOS="529" HPOS="196"/>
+							<String ID="string_209" HPOS="211" VPOS="529" WIDTH="42" HEIGHT="15" WC="0.96" CONTENT="sieht"/><SP WIDTH="14" VPOS="529" HPOS="253"/>
+							<String ID="string_210" HPOS="267" VPOS="534" WIDTH="38" HEIGHT="9" WC="0.96" CONTENT="man"/><SP WIDTH="14" VPOS="534" HPOS="305"/>
+							<String ID="string_211" HPOS="319" VPOS="534" WIDTH="33" HEIGHT="9" WC="0.96" CONTENT="nun"/><SP WIDTH="15" VPOS="534" HPOS="352"/>
+							<String ID="string_212" HPOS="367" VPOS="529" WIDTH="39" HEIGHT="19" WC="0.96" CONTENT="groß"/><SP WIDTH="14" VPOS="529" HPOS="406"/>
+							<String ID="string_213" HPOS="420" VPOS="528" WIDTH="34" HEIGHT="15" WC="0.96" CONTENT="und"/><SP WIDTH="15" VPOS="528" HPOS="454"/>
+							<String ID="string_214" HPOS="469" VPOS="528" WIDTH="71" HEIGHT="15" WC="0.96" CONTENT="deutlich"/><SP WIDTH="15" VPOS="528" HPOS="540"/>
+							<String ID="string_215" HPOS="555" VPOS="528" WIDTH="26" HEIGHT="15" WC="0.93" CONTENT="die"/><SP WIDTH="14" VPOS="528" HPOS="581"/>
+							<String ID="string_216" HPOS="595" VPOS="528" WIDTH="67" HEIGHT="15" WC="0.92" CONTENT="Verkle-"/>
+						</TextLine>
+						<TextLine ID="line_23" HPOS="31" VPOS="549" WIDTH="631" HEIGHT="21">
+							<String ID="string_217" HPOS="31" VPOS="552" WIDTH="68" HEIGHT="18" WC="0.92" CONTENT="bungen,"/><SP WIDTH="9" VPOS="552" HPOS="99"/>
+							<String ID="string_218" HPOS="108" VPOS="551" WIDTH="27" HEIGHT="15" WC="0.96" CONTENT="die"/><SP WIDTH="9" VPOS="551" HPOS="135"/>
+							<String ID="string_219" HPOS="144" VPOS="550" WIDTH="122" HEIGHT="19" WC="0.96" CONTENT="Zerstörungen"/><SP WIDTH="9" VPOS="550" HPOS="266"/>
+							<String ID="string_220" HPOS="275" VPOS="550" WIDTH="49" HEIGHT="15" WC="0.96" CONTENT="durch"/><SP WIDTH="11" VPOS="550" HPOS="324"/>
+							<String ID="string_221" HPOS="335" VPOS="550" WIDTH="30" HEIGHT="15" WC="0.93" CONTENT="den"/><SP WIDTH="10" VPOS="550" HPOS="365"/>
+							<String ID="string_222" HPOS="375" VPOS="550" WIDTH="152" HEIGHT="19" WC="0.92" CONTENT="Röntgenbeschuß,"/><SP WIDTH="9" VPOS="550" HPOS="527"/>
+							<String ID="string_223" HPOS="536" VPOS="549" WIDTH="33" HEIGHT="15" WC="0.96" CONTENT="und"/><SP WIDTH="11" VPOS="549" HPOS="569"/>
+							<String ID="string_224" HPOS="580" VPOS="549" WIDTH="19" HEIGHT="15" WC="0.96" CONTENT="da"/><SP WIDTH="10" VPOS="549" HPOS="599"/>
+							<String ID="string_225" HPOS="609" VPOS="549" WIDTH="53" HEIGHT="19" WC="0.96" CONTENT="liegen"/>
+						</TextLine>
+						<TextLine ID="line_24" HPOS="30" VPOS="570" WIDTH="632" HEIGHT="21">
+							<String ID="string_226" HPOS="30" VPOS="574" WIDTH="21" HEIGHT="14" WC="0.96" CONTENT="im"/><SP WIDTH="16" VPOS="574" HPOS="51"/>
+							<String ID="string_227" HPOS="67" VPOS="572" WIDTH="69" HEIGHT="15" WC="0.92" CONTENT="vielfach"/><SP WIDTH="17" VPOS="572" HPOS="136"/>
+							<String ID="string_228" HPOS="153" VPOS="571" WIDTH="124" HEIGHT="20" WC="0.96" CONTENT="vergrößerten,"/><SP WIDTH="17" VPOS="571" HPOS="277"/>
+							<String ID="string_229" HPOS="294" VPOS="571" WIDTH="97" HEIGHT="19" WC="0.96" CONTENT="lebendigen"/><SP WIDTH="17" VPOS="571" HPOS="391"/>
+							<String ID="string_230" HPOS="408" VPOS="571" WIDTH="61" HEIGHT="15" WC="0.96" CONTENT="Modell"/><SP WIDTH="17" VPOS="571" HPOS="469"/>
+							<String ID="string_231" HPOS="486" VPOS="571" WIDTH="26" HEIGHT="15" WC="0.96" CONTENT="die"/><SP WIDTH="17" VPOS="571" HPOS="512"/>
+							<String ID="string_232" HPOS="529" VPOS="570" WIDTH="45" HEIGHT="16" WC="0.96" CONTENT="Gene"/><SP WIDTH="16" VPOS="570" HPOS="574"/>
+							<String ID="string_233" HPOS="590" VPOS="570" WIDTH="72" HEIGHT="15" WC="0.96" CONTENT="wirklich"/>
+						</TextLine>
+						<TextLine ID="line_25" HPOS="31" VPOS="592" WIDTH="631" HEIGHT="22">
+							<String ID="string_234" HPOS="31" VPOS="594" WIDTH="91" HEIGHT="20" WC="0.92" CONTENT="aufgereiht"/><SP WIDTH="7" VPOS="594" HPOS="122"/>
+							<String ID="string_235" HPOS="129" VPOS="594" WIDTH="30" HEIGHT="15" WC="0.96" CONTENT="wie"/><SP WIDTH="8" VPOS="594" HPOS="159"/>
+							<String ID="string_236" HPOS="167" VPOS="593" WIDTH="26" HEIGHT="15" WC="0.96" CONTENT="die"/><SP WIDTH="8" VPOS="593" HPOS="193"/>
+							<String ID="string_237" HPOS="201" VPOS="593" WIDTH="59" HEIGHT="15" WC="0.96" CONTENT="Perlen"/><SP WIDTH="8" VPOS="593" HPOS="260"/>
+							<String ID="string_238" HPOS="268" VPOS="593" WIDTH="28" HEIGHT="15" WC="0.96" CONTENT="auf"/><SP WIDTH="8" VPOS="593" HPOS="296"/>
+							<String ID="string_239" HPOS="304" VPOS="593" WIDTH="29" HEIGHT="15" WC="0.96" CONTENT="der"/><SP WIDTH="7" VPOS="593" HPOS="333"/>
+							<String ID="string_240" HPOS="340" VPOS="593" WIDTH="65" HEIGHT="15" WC="0.95" CONTENT="Schnur."/><SP WIDTH="8" VPOS="593" HPOS="405"/>
+							<String ID="string_241" HPOS="413" VPOS="592" WIDTH="55" HEIGHT="15" WC="0.96" CONTENT="Selten"/><SP WIDTH="8" VPOS="592" HPOS="468"/>
+							<String ID="string_242" HPOS="476" VPOS="592" WIDTH="35" HEIGHT="15" WC="0.93" CONTENT="sind"/><SP WIDTH="8" VPOS="592" HPOS="511"/>
+							<String ID="string_243" HPOS="519" VPOS="592" WIDTH="55" HEIGHT="15" WC="0.93" CONTENT="kühne"/><SP WIDTH="7" VPOS="592" HPOS="574"/>
+							<String ID="string_244" HPOS="581" VPOS="592" WIDTH="81" HEIGHT="15" WC="0.96" CONTENT="Theorien"/>
+						</TextLine>
+						<TextLine ID="line_26" HPOS="30" VPOS="613" WIDTH="632" HEIGHT="22">
+							<String ID="string_245" HPOS="30" VPOS="616" WIDTH="43" HEIGHT="15" WC="0.96" CONTENT="eines"/><SP WIDTH="14" VPOS="616" HPOS="73"/>
+							<String ID="string_246" HPOS="87" VPOS="615" WIDTH="75" HEIGHT="20" WC="0.93" CONTENT="genialen"/><SP WIDTH="14" VPOS="615" HPOS="162"/>
+							<String ID="string_247" HPOS="176" VPOS="614" WIDTH="85" HEIGHT="16" WC="0.92" CONTENT="Forschers"/><SP WIDTH="15" VPOS="614" HPOS="261"/>
+							<String ID="string_248" HPOS="276" VPOS="614" WIDTH="48" HEIGHT="15" WC="0.95" CONTENT="durch"/><SP WIDTH="15" VPOS="614" HPOS="324"/>
+							<String ID="string_249" HPOS="339" VPOS="614" WIDTH="31" HEIGHT="15" WC="0.96" CONTENT="den"/><SP WIDTH="14" VPOS="614" HPOS="370"/>
+							<String ID="string_250" HPOS="384" VPOS="614" WIDTH="112" HEIGHT="19" WC="0.96" CONTENT="Augenschein"/><SP WIDTH="13" VPOS="614" HPOS="496"/>
+							<String ID="string_251" HPOS="509" VPOS="619" WIDTH="17" HEIGHT="10" WC="0.96" CONTENT="so"/><SP WIDTH="14" VPOS="619" HPOS="526"/>
+							<String ID="string_252" HPOS="540" VPOS="613" WIDTH="83" HEIGHT="19" WC="0.92" CONTENT="großartig"/><SP WIDTH="14" VPOS="613" HPOS="623"/>
+							<String ID="string_253" HPOS="637" VPOS="613" WIDTH="25" HEIGHT="14" WC="0.90" CONTENT="be-"/>
+						</TextLine>
+						<TextLine ID="line_27" HPOS="30" VPOS="634" WIDTH="633" HEIGHT="22">
+							<String ID="string_254" HPOS="30" VPOS="637" WIDTH="55" HEIGHT="19" WC="0.92" CONTENT="stätigt"/><SP WIDTH="14" VPOS="637" HPOS="85"/>
+							<String ID="string_255" HPOS="99" VPOS="636" WIDTH="66" HEIGHT="16" WC="0.96" CONTENT="worden"/><SP WIDTH="13" VPOS="636" HPOS="165"/>
+							<String ID="string_256" HPOS="178" VPOS="637" WIDTH="30" HEIGHT="14" WC="0.93" CONTENT="wie"/><SP WIDTH="13" VPOS="637" HPOS="208"/>
+							<String ID="string_257" HPOS="221" VPOS="635" WIDTH="77" HEIGHT="20" WC="0.91" CONTENT="Morgans"/><SP WIDTH="14" VPOS="635" HPOS="298"/>
+							<String ID="string_258" HPOS="312" VPOS="635" WIDTH="107" HEIGHT="20" WC="0.96" CONTENT="Anschauung"/><SP WIDTH="14" VPOS="635" HPOS="419"/>
+							<String ID="string_259" HPOS="433" VPOS="641" WIDTH="31" HEIGHT="9" WC="0.96" CONTENT="von"/><SP WIDTH="14" VPOS="641" HPOS="464"/>
+							<String ID="string_260" HPOS="478" VPOS="635" WIDTH="29" HEIGHT="15" WC="0.96" CONTENT="der"/><SP WIDTH="13" VPOS="635" HPOS="507"/>
+							<String ID="string_261" HPOS="520" VPOS="634" WIDTH="101" HEIGHT="20" WC="0.96" CONTENT="Anordnung"/><SP WIDTH="13" VPOS="634" HPOS="621"/>
+							<String ID="string_262" HPOS="634" VPOS="634" WIDTH="29" HEIGHT="15" WC="0.96" CONTENT="der"/>
+						</TextLine>
+						<TextLine ID="line_28" HPOS="31" VPOS="658" WIDTH="196" HEIGHT="16">
+							<String ID="string_263" HPOS="31" VPOS="659" WIDTH="44" HEIGHT="15" WC="0.96" CONTENT="Gene"/><SP WIDTH="8" VPOS="659" HPOS="75"/>
+							<String ID="string_264" HPOS="83" VPOS="659" WIDTH="22" HEIGHT="14" WC="0.93" CONTENT="im"/><SP WIDTH="10" VPOS="659" HPOS="105"/>
+							<String ID="string_265" HPOS="115" VPOS="658" WIDTH="112" HEIGHT="15" WC="0.92" CONTENT="Chromosom."/>
+						</TextLine>
+					</TextBlock>
+				</ComposedBlock>
+				<Illustration ID="cblock_1" HPOS="306" VPOS="320" WIDTH="16" HEIGHT="9"></Illustration>
+				<Illustration ID="cblock_2" HPOS="477" VPOS="359" WIDTH="26" HEIGHT="9"></Illustration>
+				<Illustration ID="cblock_3" HPOS="192" VPOS="556" WIDTH="18" HEIGHT="4"></Illustration>
+				<ComposedBlock ID="cblock_4" HPOS="111" VPOS="720" WIDTH="161" HEIGHT="17">
+					<TextBlock ID="block_2" HPOS="111" VPOS="720" WIDTH="161" HEIGHT="17">
+						<TextLine ID="line_29" HPOS="111" VPOS="720" WIDTH="161" HEIGHT="17">
+							<String ID="string_266" HPOS="111" VPOS="720" WIDTH="55" HEIGHT="17" WC="0.0" CONTENT="ae"/><SP WIDTH="95" VPOS="720" HPOS="166"/>
+							<String ID="string_267" HPOS="261" VPOS="721" WIDTH="11" HEIGHT="15" WC="0.64" CONTENT="q"/>
+						</TextLine>
+					</TextBlock>
+				</ComposedBlock>
+				<ComposedBlock ID="cblock_5" HPOS="61" VPOS="711" WIDTH="49" HEIGHT="33">
+					<TextBlock ID="block_3" HPOS="61" VPOS="711" WIDTH="49" HEIGHT="33">
+						<TextLine ID="line_30" HPOS="61" VPOS="711" WIDTH="49" HEIGHT="33">
+							<String ID="string_268" HPOS="61" VPOS="711" WIDTH="49" HEIGHT="33" WC="0.0" CONTENT="Vsedn"/>
+						</TextLine>
+					</TextBlock>
+				</ComposedBlock>
+				<Illustration ID="cblock_6" HPOS="65" VPOS="721" WIDTH="564" HEIGHT="163"></Illustration>
+				<Illustration ID="cblock_7" HPOS="166" VPOS="721" WIDTH="452" HEIGHT="24"></Illustration>
+				<ComposedBlock ID="cblock_8" HPOS="360" VPOS="715" WIDTH="182" HEIGHT="25">
+					<TextBlock ID="block_4" HPOS="360" VPOS="715" WIDTH="182" HEIGHT="25">
+						<TextLine ID="line_31" HPOS="360" VPOS="715" WIDTH="182" HEIGHT="25">
+							<String ID="string_269" HPOS="360" VPOS="715" WIDTH="45" HEIGHT="19" WC="0.0" CONTENT="mh"/><SP WIDTH="29" VPOS="715" HPOS="405"/>
+							<String ID="string_270" HPOS="434" VPOS="725" WIDTH="9" HEIGHT="15" WC="0.40" CONTENT="9"/><SP WIDTH="30" VPOS="725" HPOS="443"/>
+							<String ID="string_271" HPOS="473" VPOS="722" WIDTH="15" HEIGHT="18" WC="0.54" CONTENT="st"/><SP WIDTH="18" VPOS="722" HPOS="488"/>
+							<String ID="string_272" HPOS="506" VPOS="720" WIDTH="36" HEIGHT="20" WC="0.37" CONTENT="fa"/>
+						</TextLine>
+					</TextBlock>
+				</ComposedBlock>
+				<Illustration ID="cblock_9" HPOS="110" VPOS="747" WIDTH="424" HEIGHT="8"></Illustration>
+				<ComposedBlock ID="cblock_10" HPOS="71" VPOS="911" WIDTH="557" HEIGHT="33">
+					<TextBlock ID="block_5" HPOS="71" VPOS="911" WIDTH="557" HEIGHT="33">
+						<TextLine ID="line_32" HPOS="71" VPOS="911" WIDTH="557" HEIGHT="17">
+							<String ID="string_273" HPOS="71" VPOS="913" WIDTH="24" HEIGHT="12" WC="0.93" CONTENT="Die"/><SP WIDTH="7" VPOS="913" HPOS="95"/>
+							<String ID="string_274" HPOS="102" VPOS="913" WIDTH="95" HEIGHT="15" WC="0.69" CONTENT="Morgan&#39;sche"/><SP WIDTH="6" VPOS="913" HPOS="197"/>
+							<String ID="string_275" HPOS="203" VPOS="913" WIDTH="147" HEIGHT="12" WC="0.92" CONTENT="Chromosomenkarte"/><SP WIDTH="6" VPOS="913" HPOS="350"/>
+							<String ID="string_276" HPOS="356" VPOS="912" WIDTH="36" HEIGHT="12" WC="0.96" CONTENT="oben"/><SP WIDTH="7" VPOS="912" HPOS="392"/>
+							<String ID="string_277" HPOS="399" VPOS="912" WIDTH="36" HEIGHT="15" WC="0.96" CONTENT="zeigt"/><SP WIDTH="6" VPOS="912" HPOS="435"/>
+							<String ID="string_278" HPOS="441" VPOS="911" WIDTH="61" HEIGHT="12" WC="0.96" CONTENT="dieselbe"/><SP WIDTH="5" VPOS="911" HPOS="502"/>
+							<String ID="string_279" HPOS="507" VPOS="911" WIDTH="90" HEIGHT="15" WC="0.96" CONTENT="Reihenfolge"/><SP WIDTH="7" VPOS="911" HPOS="597"/>
+							<String ID="string_280" HPOS="604" VPOS="911" WIDTH="24" HEIGHT="11" WC="0.96" CONTENT="der"/>
+						</TextLine>
+						<TextLine ID="line_33" HPOS="72" VPOS="928" WIDTH="556" HEIGHT="16">
+							<String ID="string_281" HPOS="72" VPOS="929" WIDTH="38" HEIGHT="12" WC="0.93" CONTENT="Gene"/><SP WIDTH="9" VPOS="929" HPOS="110"/>
+							<String ID="string_282" HPOS="119" VPOS="936" WIDTH="4" HEIGHT="2" WC="0.92" CONTENT="-"/><SP WIDTH="9" VPOS="936" HPOS="123"/>
+							<String ID="string_283" HPOS="132" VPOS="929" WIDTH="93" HEIGHT="15" WC="0.93" CONTENT="symbolisiert"/><SP WIDTH="6" VPOS="929" HPOS="225"/>
+							<String ID="string_284" HPOS="231" VPOS="929" WIDTH="40" HEIGHT="12" WC="0.93" CONTENT="durch"/><SP WIDTH="6" VPOS="929" HPOS="271"/>
+							<String ID="string_285" HPOS="277" VPOS="929" WIDTH="84" HEIGHT="12" WC="0.90" CONTENT="Buchstaben"/><SP WIDTH="8" VPOS="929" HPOS="361"/>
+							<String ID="string_286" HPOS="369" VPOS="935" WIDTH="5" HEIGHT="2" WC="0.93" CONTENT="-"/><SP WIDTH="9" VPOS="935" HPOS="374"/>
+							<String ID="string_287" HPOS="383" VPOS="929" WIDTH="26" HEIGHT="11" WC="0.96" CONTENT="wie"/><SP WIDTH="7" VPOS="929" HPOS="409"/>
+							<String ID="string_288" HPOS="416" VPOS="929" WIDTH="24" HEIGHT="11" WC="0.93" CONTENT="das"/><SP WIDTH="6" VPOS="929" HPOS="440"/>
+							<String ID="string_289" HPOS="446" VPOS="928" WIDTH="134" HEIGHT="12" WC="0.91" CONTENT="Riesenchromosom"/><SP WIDTH="6" VPOS="928" HPOS="580"/>
+							<String ID="string_290" HPOS="586" VPOS="928" WIDTH="42" HEIGHT="10" WC="0.96" CONTENT="unten"/>
+						</TextLine>
+					</TextBlock>
+				</ComposedBlock>
+				<ComposedBlock ID="cblock_11" HPOS="340" VPOS="969" WIDTH="20" HEIGHT="14">
+					<TextBlock ID="block_6" HPOS="340" VPOS="969" WIDTH="20" HEIGHT="14">
+						<TextLine ID="line_34" HPOS="340" VPOS="969" WIDTH="20" HEIGHT="14">
+							<String ID="string_291" HPOS="340" VPOS="969" WIDTH="20" HEIGHT="14" WC="0.96" CONTENT="29"/>
+						</TextLine>
+					</TextBlock>
+				</ComposedBlock>
+			</PrintSpace>
+		</Page>
+	</Layout>
+</alto>

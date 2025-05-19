@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v3#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/standards/alto/ns-v3# http://www.loc.gov/alto/v3/alto-3-0.xsd">
+	<Description>
+		<MeasurementUnit>pixel</MeasurementUnit>
+		<sourceImageInformation>
+			<fileName>page_0005005.jpg</fileName>
+		</sourceImageInformation>
+		<OCRProcessing ID="OCR_0">
+			<ocrProcessingStep>
+				<processingSoftware>
+					<softwareName>tesseract 5.3.4</softwareName>
+				</processingSoftware>
+			</ocrProcessingStep>
+		</OCRProcessing>
+	</Description>
+	<Layout>
+		<Page WIDTH="2481" HEIGHT="3508" PHYSICAL_IMG_NR="0" ID="page_0005">
+			<PrintSpace HPOS="0" VPOS="0" WIDTH="2481" HEIGHT="3508">
+				<ComposedBlock ID="cblock_0" HPOS="202" VPOS="279" WIDTH="1990" HEIGHT="216">
+					<TextBlock ID="block_0" HPOS="202" VPOS="279" WIDTH="1990" HEIGHT="216">
+						<TextLine ID="line_0" HPOS="202" VPOS="279" WIDTH="1990" HEIGHT="67">
+							<String ID="string_0" HPOS="202" VPOS="284" WIDTH="425" HEIGHT="62" WC="0.3" CONTENT="KLEINE"/><SP WIDTH="51" VPOS="284" HPOS="627"/>
+							<String ID="string_1" HPOS="678" VPOS="285" WIDTH="706" HEIGHT="61" WC="0.3" CONTENT="BIBLIOTHEK"/><SP WIDTH="58" VPOS="285" HPOS="1384"/>
+							<String ID="string_2" HPOS="1442" VPOS="283" WIDTH="204" HEIGHT="62" WC="0.96" CONTENT="DES"/><SP WIDTH="63" VPOS="283" HPOS="1646"/>
+							<String ID="string_3" HPOS="1709" VPOS="279" WIDTH="483" HEIGHT="65" WC="0.95" CONTENT="WISSENS"/>
+						</TextLine>
+						<TextLine ID="line_1" HPOS="522" VPOS="394" WIDTH="1208" HEIGHT="101">
+							<String ID="string_4" HPOS="522" VPOS="394" WIDTH="1208" HEIGHT="101" WC="0.17" CONTENT=" LUX-LESEBOGEN"/>
+						</TextLine>
+					</TextBlock>
+				</ComposedBlock>
+				<ComposedBlock ID="cblock_1" HPOS="131" VPOS="549" WIDTH="2064" HEIGHT="60">
+					<TextBlock ID="block_1" HPOS="131" VPOS="549" WIDTH="2064" HEIGHT="60">
+						<TextLine ID="line_2" HPOS="131" VPOS="549" WIDTH="2064" HEIGHT="60">
+							<String ID="string_5" HPOS="131" VPOS="561" WIDTH="9" HEIGHT="6" WC="0.6" CONTENT="*"/><SP WIDTH="65" VPOS="561" HPOS="140"/>
+							<String ID="string_6" HPOS="205" VPOS="552" WIDTH="343" HEIGHT="47" WC="0.13" CONTENT="NATUR-"/><SP WIDTH="58" VPOS="552" HPOS="548"/>
+							<String ID="string_7" HPOS="606" VPOS="553" WIDTH="186" HEIGHT="46" WC="0.92" CONTENT="UND"/><SP WIDTH="56" VPOS="553" HPOS="792"/>
+							<String ID="string_8" HPOS="848" VPOS="550" WIDTH="986" HEIGHT="59" WC="0.90" CONTENT="KULTURKUNDLICHE"/><SP WIDTH="55" VPOS="550" HPOS="1834"/>
+							<String ID="string_9" HPOS="1889" VPOS="549" WIDTH="306" HEIGHT="48" WC="0.96" CONTENT="HEFTE"/>
+						</TextLine>
+					</TextBlock>
+				</ComposedBlock>
+				<ComposedBlock ID="cblock_2" HPOS="842" VPOS="1032" WIDTH="662" HEIGHT="145">
+					<TextBlock ID="block_2" HPOS="842" VPOS="1032" WIDTH="662" HEIGHT="145">
+						<TextLine ID="line_3" HPOS="842" VPOS="1032" WIDTH="662" HEIGHT="145">
+							<String ID="string_10" HPOS="842" VPOS="1032" WIDTH="662" HEIGHT="145" WC="0.0" CONTENT="FRITZBOLLE"/>
+						</TextLine>
+					</TextBlock>
+				</ComposedBlock>
+				<Illustration ID="cblock_3" HPOS="764" VPOS="1278" WIDTH="950" HEIGHT="1149"></Illustration>
+				<ComposedBlock ID="cblock_4" HPOS="227" VPOS="3174" WIDTH="1992" HEIGHT="89">
+					<TextBlock ID="block_3" HPOS="227" VPOS="3174" WIDTH="1992" HEIGHT="89">
+						<TextLine ID="line_4" HPOS="227" VPOS="3174" WIDTH="1992" HEIGHT="89">
+							<String ID="string_11" HPOS="227" VPOS="3181" WIDTH="344" HEIGHT="73" WC="0.96" CONTENT="VERLAG"/><SP WIDTH="21" VPOS="3181" HPOS="571"/>
+							<String ID="string_12" HPOS="592" VPOS="3180" WIDTH="433" HEIGHT="64" WC="0.96" CONTENT="SEBASTIAN"/><SP WIDTH="41" VPOS="3180" HPOS="1025"/>
+							<String ID="string_13" HPOS="1066" VPOS="3181" WIDTH="159" HEIGHT="61" WC="0.93" CONTENT="LUX"/><SP WIDTH="59" VPOS="3181" HPOS="1225"/>
+							<String ID="string_14" HPOS="1284" VPOS="3209" WIDTH="16" HEIGHT="19" WC="0.39" CONTENT="»"/><SP WIDTH="58" VPOS="3209" HPOS="1300"/>
+							<String ID="string_15" HPOS="1358" VPOS="3178" WIDTH="354" HEIGHT="64" WC="0.91" CONTENT="MURNAU"/><SP WIDTH="38" VPOS="3178" HPOS="1712"/>
+							<String ID="string_16" HPOS="1750" VPOS="3196" WIDTH="21" HEIGHT="41" WC="0.39" CONTENT=","/><SP WIDTH="39" VPOS="3196" HPOS="1771"/>
+							<String ID="string_17" HPOS="1810" VPOS="3174" WIDTH="409" HEIGHT="89" WC="0.95" CONTENT="MÜNCHEN"/>
+						</TextLine>
+					</TextBlock>
+				</ComposedBlock>
+				<ComposedBlock ID="cblock_5" HPOS="798" VPOS="3404" WIDTH="736" HEIGHT="88">
+					<TextBlock ID="block_4" HPOS="798" VPOS="3404" WIDTH="736" HEIGHT="88">
+						<TextLine ID="line_5" HPOS="798" VPOS="3404" WIDTH="736" HEIGHT="88">
+							<String ID="string_18" HPOS="798" VPOS="3400" WIDTH="261" HEIGHT="106" WC="0.22" CONTENT="re"/><SP WIDTH="53" VPOS="3400" HPOS="1059"/>
+							<String ID="string_19" HPOS="1112" VPOS="3411" WIDTH="422" HEIGHT="81" WC="0.34" CONTENT="Zee"/>
+						</TextLine>
+					</TextBlock>
+				</ComposedBlock>
+			</PrintSpace>
+		</Page>
+	</Layout>
+</alto>

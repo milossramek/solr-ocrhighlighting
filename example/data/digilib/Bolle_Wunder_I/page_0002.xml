@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v3#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/standards/alto/ns-v3# http://www.loc.gov/alto/v3/alto-3-0.xsd">
+	<Description>
+		<MeasurementUnit>pixel</MeasurementUnit>
+		<sourceImageInformation>
+			<fileName>page_0002002.jpg</fileName>
+		</sourceImageInformation>
+		<OCRProcessing ID="OCR_0">
+			<ocrProcessingStep>
+				<processingSoftware>
+					<softwareName>tesseract 5.3.4</softwareName>
+				</processingSoftware>
+			</ocrProcessingStep>
+		</OCRProcessing>
+	</Description>
+	<Layout>
+		<Page WIDTH="2481" HEIGHT="3508" PHYSICAL_IMG_NR="0" ID="page_0002">
+			<PrintSpace HPOS="0" VPOS="0" WIDTH="2481" HEIGHT="3508">
+				<GraphicalElement ID="cblock_0" HPOS="2480" VPOS="45" WIDTH="1" HEIGHT="3422"></GraphicalElement >
+				<Illustration ID="cblock_1" HPOS="0" VPOS="0" WIDTH="2481" HEIGHT="3508"></Illustration>
+			</PrintSpace>
+		</Page>
+	</Layout>
+</alto>
