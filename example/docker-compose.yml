@@ -41,10 +41,12 @@ services:
         CFG_IMAGE_API_BASE: ${CFG_IMAGE_API_BASE}
         CFG_LIBRARY_NAME: ${CFG_LIBRARY_NAME}
         CFG_SERVER_URL: ${CFG_SERVER_URL}
+        CFG_SNIPPET_SCALING: ${CFG_SNIPPET_SCALING}
     environment:
       - CFG_IMAGE_API_BASE
       - CFG_LIBRARY_NAME
       - CFG_SERVER_URL
+      - CFG_SNIPPET_SCALING
     ports:
       - "8181:80"
     depends_on:
