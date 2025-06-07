@@ -156,7 +156,7 @@ function convert_and_ocr_files () {
       for i in $filelist; do 
         pname=page_`printf "%04d" $num`
         echo $Title converting $i to $pname.jpg
-        convert -contrast-stretch 1% -quality 80 $i $pname.jpg
+        convert -contrast-stretch 0.1% -quality 80 $i $pname.jpg
         echo ocr of $pname.jpg to $pname.xml
         tesseract $pname.jpg $pname -l $Language alto 2>/dev/null
         sed -i -s "s/page_0/$pname/" $pname.xml

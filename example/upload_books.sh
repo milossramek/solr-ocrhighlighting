@@ -11,8 +11,11 @@ fi
 source .env 
 
 workdir=$CFG_DIGILIB_PATH  #data/digilib
+#DRY_RUN=--dry-run
 
 function upload_jpg_files () {
+  #upload the csv file
+  rsync $DRY_RUN -av  $1 $CFG_DATA_REMOTE_PATH/
   while IFS=';' read -ra array; do
     DirName=("${array[0]}")
     SourcePath=("${array[2]}")
@@ -28,8 +31,12 @@ function upload_jpg_files () {
     (
     echo Uploading  $workdir/$DirName
     cd $workdir/$DirName
-    scp -r "$DirName" $CFG_IIIF_DATA_PATH
+    #rsync -rtv --exclude="*orig.jpg" ZDejVedTechSlov_I omekal:/var/www/iiif
+    #rsync -rtv --exclude="*orig.jpg" $DirName $CFG_IIIF_DATA_PATH
+    rsync $DRY_RUN -rtv --exclude="*orig.jpg" $DirName $CFG_IIIF_DATA_PATH
     )
+    #upload xml files and pages.json
+    rsync $DRY_RUN -av --exclude '*/' --exclude '*orig.xml' $workdir/$DirName/ $CFG_DATA_REMOTE_PATH/$DirName/
   done < $1
 }
 
