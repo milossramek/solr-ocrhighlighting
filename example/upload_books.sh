@@ -29,13 +29,14 @@ function upload_jpg_files () {
     fi
   
     (
-    echo Uploading  $workdir/$DirName
+    echo Uploading  $workdir/$DirName to $CFG_IIIF_DATA_PATH
     cd $workdir/$DirName
     #rsync -rtv --exclude="*orig.jpg" ZDejVedTechSlov_I omekal:/var/www/iiif
     #rsync -rtv --exclude="*orig.jpg" $DirName $CFG_IIIF_DATA_PATH
     rsync $DRY_RUN -rtv --exclude="*orig.jpg" $DirName $CFG_IIIF_DATA_PATH
     )
     #upload xml files and pages.json
+    echo "rsync $DRY_RUN -av --exclude '*/' --exclude '*orig.xml' $workdir/$DirName/ $CFG_DATA_REMOTE_PATH/$DirName/"
     rsync $DRY_RUN -av --exclude '*/' --exclude '*orig.xml' $workdir/$DirName/ $CFG_DATA_REMOTE_PATH/$DirName/
   done < $1
 }
