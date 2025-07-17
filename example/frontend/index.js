@@ -222,9 +222,16 @@ class DigilibResultDocument extends Component {
         ].id.substring(1)
       ) - 1;
     const viewerUrl = `/viewer/?manifest=${manifestUri}&cv=${pageIdx}&q=${query}`;
+    const [isListVisible, setIsListVisible] = useState(false); // State to control visibility
+
+    const toggleListVisibility = () => {
+        setIsListVisible(!isListVisible); // Toggle the state on click
+    };
     return (
       <div class="result-document">
         <Elevation z={4}>
+        {/* Header section - make this div clickable */}
+        <div onClick={toggleListVisibility} style={{ cursor: 'pointer' }}>
           <Typography tag="div" headline4>
             <div style={{ color: 'blue' }} >
               {doc.author[0]+", "+doc.title }
@@ -234,7 +241,9 @@ class DigilibResultDocument extends Component {
           <Typography subtitle1>
             Počet výsledkov v dokumente: {ocr_hl ? ocr_hl.numTotal : "Žiadne"}
           </Typography>
-          {ocr_hl &&
+        </div>
+        {/* Conditionally render the list based on isListVisible state */}
+          {isListVisible && ocr_hl &&
             ocr_hl.snippets.map((snip) => (
               <SnippetDisplay
                 snippet={snip}
