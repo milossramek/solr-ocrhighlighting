@@ -231,17 +231,51 @@ class DigilibResultDocument extends Component {
       <div class="result-document">
         <Elevation z={4}>
         {/* Header section - make this div clickable */}
-        <div onClick={toggleListVisibility} style={{ cursor: 'pointer' }}>
-          <Typography tag="div" headline4>
-            <div style={{ color: 'blue' }} >
-              {doc.author[0]+", "+doc.title }
+        <div onClick={toggleListVisibility} style={{ 
+            cursor: 'pointer', 
+            display: 'flex', // Use flexbox for alignment
+            alignItems: 'center', // Vertically center items
+            padding: '8px 0', // Add some padding for better click area
+        }}>
+        {/* The foldable indicator icon */}
+          <span
+            style={{
+              marginRight: '8px', // Space between icon and text
+              transition: 'transform 0.2s ease-in-out', // Smooth rotation
+              transform: isListVisible ? 'rotate(90deg)' : 'rotate(0deg)', // Rotate based on state
+              fontSize: '1.2em', // Make icon slightly larger
+            }}
+          >
+            ► {/* Unicode right-pointing triangle */}
+          </span>
+
+          {/* New inner flex container to hold left-aligned and right-aligned parts */}
+          <div
+            style={{
+              flexGrow: 1, // Allows this div to take up all available space
+              display: 'flex',
+              justifyContent: 'space-between', // Pushes children to opposite ends
+              alignItems: 'center', // Vertically center items within this flex container
+            }}
+          >
+            {/* Left-aligned content: Author, Title, and Subtitle */}
+            <div>
+              <Typography tag="div" headline4>
+                <div style={{ color: 'blue' }} >
+                  {doc.author[0] + ", " + doc.title}
+                </div>
+              </Typography>
+              {doc.subtitle} {/* This remains directly here for the left group */}
             </div>
-          </Typography>
-          {doc.subtitle}
-          <Typography subtitle1>
-            Počet výsledkov v dokumente: {ocr_hl ? ocr_hl.numTotal : "Žiadne"}
-          </Typography>
+
+            {/* Right-aligned content: Počet výsledkov */}
+            <Typography subtitle1 style={{ marginLeft: '16px' }}> {/* Add some left margin for spacing */}
+              Počet výsledkov: {ocr_hl ? ocr_hl.numTotal : "Žiadne"}
+            </Typography>
+          </div>
         </div>
+
+
         {/* Conditionally render the list based on isListVisible state */}
           {isListVisible && ocr_hl &&
             ocr_hl.snippets.map((snip) => (
