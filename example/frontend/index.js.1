@@ -1,8 +1,8 @@
 import "preact/debug";
 import "./style";
 import ResizeObserver from "resize-observer-polyfill";
-import { Component } from "preact";
-import { useState, useRef, useEffect, useMemo } from "preact/hooks";
+import { Component, Fragment } from "preact";
+import { useState, useRef, useEffect, useMemo} from "preact/hooks";
 import TextField from "preact-material-components/TextField";
 import LinearProgress from "preact-material-components/LinearProgress";
 import Typography from "preact-material-components/Typography";
@@ -224,9 +224,34 @@ class DigilibResultDocument extends Component {
     const viewerUrl = `/viewer/?manifest=${manifestUri}&cv=${pageIdx}&q=${query}`;
     const [isListVisible, setIsListVisible] = useState(false); // State to control visibility
 
+    // Define how many items to show initially and per "More" click
+    const PAGE_SIZE = 10;
+    // New state to track the number of items currently displayed for pagination
+    const [itemsToShow, setItemsToShow] = useState(PAGE_SIZE);
+console.log('ResultDocument rendered. Current isListVisible:', isListVisible);
+
     const toggleListVisibility = () => {
         setIsListVisible(!isListVisible); // Toggle the state on click
+        // Optional: Reset the pagination when the list is folded/unfolded
+        // If you want to always start from 10 items when you re-open the list
+        setItemsToShow(PAGE_SIZE);
+console.log('Header clicked! Toggling visibility.');
+console.log('New isListVisible state after click:', newState);
     };
+
+    const handleLoadMore = () => {
+    // Increase the number of items to show by PAGE_SIZE
+    setItemsToShow(prevCount => prevCount + PAGE_SIZE);
+    };
+
+    // Determine which snippets to display based on itemsToShow state
+    const snippetsToDisplay = ocr_hl && ocr_hl.snippets
+      ? ocr_hl.snippets.slice(0, itemsToShow)
+      : [];
+
+    // Check if there are more snippets to load
+    const hasMoreSnippets = ocr_hl && ocr_hl.snippets && itemsToShow < ocr_hl.snippets.length;
+
     return (
       <div class="result-document">
         <Elevation z={4}>
@@ -275,19 +300,46 @@ class DigilibResultDocument extends Component {
           </div>
         </div>
 
+        {/* Conditionally render the list AND the "More" button */}
+        {isListVisible && (
+          <Fragment> {/* Use a fragment to group the list and the button */}
+            {snippetsToDisplay.length > 0 ? (
+              snippetsToDisplay.map((snip) => (
+                <SnippetDisplay
+                  key={snip.id || JSON.stringify(snip)} // Ensure a unique key
+                  snippet={snip}
+                  docId={doc.issue_id}
+                  docTitle={doc.title}
+                  query={query}
+                  manifestUri={manifestUri}
+                  getImageUrl={getImageUrl}
+                />
+              ))
+            ) : (
+              // Display a message if there are no snippets, even if ocr_hl exists
+              ocr_hl && ocr_hl.numTotal === 0 && <p>Žiadne výsledky pre zobrazenie.</p>
+            )}
 
-        {/* Conditionally render the list based on isListVisible state */}
-          {isListVisible && ocr_hl &&
-            ocr_hl.snippets.map((snip) => (
-              <SnippetDisplay
-                snippet={snip}
-                docId={doc.issue_id}
-                docTitle={doc.title}
-                query={query}
-                manifestUri={manifestUri}
-                getImageUrl={this.getImageUrl.bind(this)}
-              />
-            ))}
+            {/* "More" button, shown only if there are more items to load */}
+            {hasMoreSnippets && (
+              <button
+                onClick={handleLoadMore}
+                style={{
+                  marginTop: '10px',
+                  padding: '8px 15px',
+                  cursor: 'pointer',
+                  backgroundColor: '#f0f0f0',
+                  border: '1px solid #ccc',
+                  borderRadius: '4px',
+                  // You can add more styling here
+                }}
+              >
+                Zobraziť viac ({snippetsToDisplay.length} z {ocr_hl.snippets.length})
+              </button>
+            )}
+          </Fragment>
+        )}
+
         </Elevation>
       </div>
     );
@@ -301,7 +353,7 @@ export default class App extends Component {
       isSearchPending: false,
       queryParams: {
         defType: "edismax",
-        "hl.snippets": 1000,
+        "hl.snippets": 10,
         "hl.weightMatches": true,
         hl: "on",
         rows: 1000,
@@ -384,7 +436,6 @@ export default class App extends Component {
         <Typography tag="p">
           Hľadaný výraz: zadávajte s diakritikou, veľkosť písmen nerozhoduje. 
         </Typography>
-        {/*
           <FormField className="passage-slider">
             <label for="passage-slider">Max. počet výsledkov</label>
             <Slider
@@ -399,11 +450,10 @@ export default class App extends Component {
             />
           </FormField>
           {isSearchPending && <LinearProgress indeterminate />}
-        */}
         </form>
         {!isSearchPending && searchResults !== undefined && (
           <Typography tag="p" subtitle1>
-            Hľadaný výraz bol nájdený v {searchResults.response.numFound} dokumentoch za{" "}
+            Hľadaný výraz nájdený v {searchResults.response.numFound} dokumentoch za{" "}
             {searchResults.responseHeader.QTime} ms.
           </Typography>
         )}
