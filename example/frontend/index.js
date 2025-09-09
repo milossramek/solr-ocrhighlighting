@@ -385,8 +385,10 @@ export default class App extends Component {
         </form>
         {!isSearchPending && searchResults !== undefined && (
           <Typography tag="p" subtitle1>
-            Hľadaný výraz bol nájdený v {searchResults.response.numFound} dokumentoch za{" "}
-            {searchResults.responseHeader.QTime} ms.
+            {searchResults.response.numFound === 0 
+              ? "Hľadaný výraz nebol nájdený" 
+              : `Hľadaný výraz bol nájdený v ${searchResults.response.numFound} dokumentoch za ${searchResults.responseHeader.QTime} ms.`
+            }
           </Typography>
         )}
         <section class="results">
