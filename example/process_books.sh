@@ -115,9 +115,9 @@ function convert_and_ocr_files () {
     #Create work directory. iiif_prezi and solr will read data from there
     rm -rf $workdir/$DirName
     mkdir $workdir/$DirName
+    page_data_dir=$workdir/$DirName/input_pages
   
     if [[ "$Format" == "pdf" ]]; then
-        page_data_dir=$workdir/$DirName/pages
         mkdir $page_data_dir  #directory to extract pdf pages to
         scp $SourcePath $page_data_dir
         echo Extracting pages from $Format file
@@ -130,7 +130,7 @@ function convert_and_ocr_files () {
         )
     else
         scp -r $SourcePath $workdir/$DirName
-        page_data_dir=$workdir/$DirName/`basename $SourcePath`
+        mv $workdir/$DirName/`basename $SourcePath` $page_data_dir
     fi
   
     #Convert files and build the pages.json file

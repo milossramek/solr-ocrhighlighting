@@ -100,4 +100,7 @@ if __name__ == '__main__':
 '''
 Delete all 'ocr' content
 curl -X POST -H 'Content-Type: text/xml' -d '<delete><query>*:*</query></delete>' "http://localhost:8983/solr/ocr/update?commit=true"
+
+Execute remotely
+ssh digilib "cd /var/opt/solr-ocrhighlighting/example && ./ingest_digi.py data/digilib/skenDII.csv "
 '''

@@ -7,7 +7,6 @@ import TextField from "preact-material-components/TextField";
 import LinearProgress from "preact-material-components/LinearProgress";
 import Typography from "preact-material-components/Typography";
 import Elevation from "preact-material-components/Elevation";
-import Slider from "preact-material-components/Slider";
 import FormField from "preact-material-components/FormField";
 import Checkbox from "preact-material-components/Checkbox";
 
@@ -15,7 +14,6 @@ import "preact-material-components/TextField/style.css";
 import "preact-material-components/LinearProgress/style.css";
 import "preact-material-components/Typography/style.css";
 import "preact-material-components/Elevation/style.css";
-import "preact-material-components/Slider/style.css";
 import "preact-material-components/FormField/style.css";
 import "preact-material-components/Checkbox/style.css";
 
@@ -199,9 +197,7 @@ const SnippetDisplay = ({
   );
 };
 
-class DigilibResultDocument extends Component {
-  getImageUrl(region, page, width) {
-    const bookId = this.props.doc.id;
+const getImageUrl = (bookId, region, page, width) => {
     const x = parseInt(region.ulx);
     const y = parseInt(region.uly);
     const w = parseInt((region.lrx - region.ulx));
@@ -209,89 +205,91 @@ class DigilibResultDocument extends Component {
     const regionStr = `${x},${y},${w},${h}`;
     const widthStr = width ? `${width},` : "max";
     return `${IMAGE_API_BASE_B}/${bookId}%2F${page.id}.jpg/${regionStr}/${widthStr}/0/default.jpg`;
-  }
+};
 
-  render() {
-    const { hl, ocr_hl, query } = this.props;
-    const doc = highlightDocument(this.props.doc, hl);
-    const manifestUri = `${APP_BASE}/iiif/presentation/${doc.id}/manifest`;
-    const pageIdx =
-      parseInt(
-        ocr_hl.snippets[0].pages[
-          ocr_hl.snippets[0].regions[0].pageIdx
-        ].id.substring(1)
-      ) - 1;
-    const viewerUrl = `/viewer/?manifest=${manifestUri}&cv=${pageIdx}&q=${query}`;
-    const [isListVisible, setIsListVisible] = useState(false); // State to control visibility
+function DigilibResultDocument({ hl, ocr_hl, query, doc: initialDoc }) {
+    const doc = highlightDocument(initialDoc, hl);
+    const [isListVisible, setIsListVisible] = useState(false);
+
+    useEffect(() => {
+        setIsListVisible(false);
+    }, [query]);
 
     const toggleListVisibility = () => {
-        setIsListVisible(!isListVisible); // Toggle the state on click
+        setIsListVisible(!isListVisible);
     };
+
+    const pageIdx =
+        (ocr_hl && ocr_hl.snippets && ocr_hl.snippets[0] &&
+         ocr_hl.snippets[0].pages && ocr_hl.snippets[0].regions &&
+         ocr_hl.snippets[0].regions[0])
+            ? parseInt(ocr_hl.snippets[0].pages[ocr_hl.snippets[0].regions[0].pageIdx].id.substring(1)) - 1
+            : 0;
+    const manifestUri = `${APP_BASE}/iiif/presentation/${doc.id}/manifest`;
+    const viewerUrl = `/viewer/?manifest=${manifestUri}&cv=${pageIdx}&q=${query}`;
+
     return (
-      <div class="result-document">
-        <Elevation z={4}>
-        {/* Header section - make this div clickable */}
-        <div onClick={toggleListVisibility} style={{ 
-            cursor: 'pointer', 
-            display: 'flex', // Use flexbox for alignment
-            alignItems: 'center', // Vertically center items
-            padding: '8px 0', // Add some padding for better click area
-        }}>
-        {/* The foldable indicator icon */}
-          <span
-            style={{
-              marginRight: '8px', // Space between icon and text
-              transition: 'transform 0.2s ease-in-out', // Smooth rotation
-              transform: isListVisible ? 'rotate(90deg)' : 'rotate(0deg)', // Rotate based on state
-              fontSize: '1.2em', // Make icon slightly larger
-            }}
-          >
-            ► {/* Unicode right-pointing triangle */}
-          </span>
+        <div class="result-document">
+            <Elevation z={4}>
+                <div
+                    onClick={toggleListVisibility}
+                    style={{
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        padding: '8px 0',
+                    }}
+                >
+                    <span
+                        style={{
+                            marginRight: '8px',
+                            transition: 'transform 0.2s ease-in-out',
+                            transform: isListVisible ? 'rotate(90deg)' : 'rotate(0deg)',
+                            fontSize: '1.2em',
+                        }}
+                    >
+                        ►
+                    </span>
 
-          {/* New inner flex container to hold left-aligned and right-aligned parts */}
-          <div
-            style={{
-              flexGrow: 1, // Allows this div to take up all available space
-              display: 'flex',
-              justifyContent: 'space-between', // Pushes children to opposite ends
-              alignItems: 'center', // Vertically center items within this flex container
-            }}
-          >
-            {/* Left-aligned content: Author, Title, and Subtitle */}
-            <div>
-              <Typography tag="div" headline4>
-                <div style={{ color: 'blue' }} >
-                  {doc.author[0] + ", " + doc.title}
+                    <div
+                        style={{
+                            flexGrow: 1,
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                        }}
+                    >
+                        <div>
+                            <Typography tag="div" headline4>
+                                <div style={{ color: 'blue' }} >
+                                    {doc.author[0] + ", " + doc.title}
+                                </div>
+                            </Typography>
+                            {doc.subtitle}
+                        </div>
+
+                        <Typography subtitle1 style={{ marginLeft: '16px' }}>
+                            Počet výsledkov: {ocr_hl ? ocr_hl.numTotal : "Žiadne"}
+                        </Typography>
+                    </div>
                 </div>
-              </Typography>
-              {doc.subtitle} {/* This remains directly here for the left group */}
-            </div>
 
-            {/* Right-aligned content: Počet výsledkov */}
-            <Typography subtitle1 style={{ marginLeft: '16px' }}> {/* Add some left margin for spacing */}
-              Počet výsledkov: {ocr_hl ? ocr_hl.numTotal : "Žiadne"}
-            </Typography>
-          </div>
+                {isListVisible && ocr_hl && ocr_hl.snippets && ocr_hl.snippets.length > 0 && (
+                    ocr_hl.snippets.map((snip, idx) => (
+                        <SnippetDisplay
+                            key={idx}
+                            snippet={snip}
+                            docId={doc.issue_id}
+                            docTitle={doc.title}
+                            query={query}
+                            manifestUri={manifestUri}
+                            getImageUrl={(region, page, width) => getImageUrl(doc.id, region, page, width)}
+                        />
+                    ))
+                )}
+            </Elevation>
         </div>
-
-
-        {/* Conditionally render the list based on isListVisible state */}
-          {isListVisible && ocr_hl &&
-            ocr_hl.snippets.map((snip) => (
-              <SnippetDisplay
-                snippet={snip}
-                docId={doc.issue_id}
-                docTitle={doc.title}
-                query={query}
-                manifestUri={manifestUri}
-                getImageUrl={this.getImageUrl.bind(this)}
-              />
-            ))}
-        </Elevation>
-      </div>
     );
-  }
 }
 
 export default class App extends Component {
@@ -384,22 +382,6 @@ export default class App extends Component {
         <Typography tag="p">
           Hľadaný výraz: zadávajte s diakritikou, veľkosť písmen nerozhoduje. 
         </Typography>
-        {/*
-          <FormField className="passage-slider">
-            <label for="passage-slider">Max. počet výsledkov</label>
-            <Slider
-              discrete
-              step={1}
-              value={this.state.queryParams["hl.snippets"]}
-              min={1}
-              max={50}
-              onChange={this.onSliderChange.bind(this)}
-              id="passage-slider"
-              disabled={isSearchPending}
-            />
-          </FormField>
-          {isSearchPending && <LinearProgress indeterminate />}
-        */}
         </form>
         {!isSearchPending && searchResults !== undefined && (
           <Typography tag="p" subtitle1>
