@@ -143,7 +143,7 @@ const RegionDisplay = ({
   const dynamicWidth = __CFG_SNIPPET_SCALING__ * (region.lrx - region.ulx) / page.width;
   const viewerUrl = `/viewer/?manifest=${manifestUri}&cv=${page.id}&q=${query}&title=${title}`;
   return (
-    <div class="region-display">
+    <div class="region-display" style={{ backgroundColor: '#f0f8ff', padding: '8px', margin: '4px 0', borderRadius: '4px' }}>
       <div class="region-img-container">
         <a href={viewerUrl} target="_blank" title="Stranu otvoriť v prehliadači Mirador">
           <img ref={ref} alt={region.text} src={getImageUrl(region, page)} style={{ width: `${dynamicWidth}vw` }}  />
