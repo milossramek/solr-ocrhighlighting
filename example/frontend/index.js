@@ -402,6 +402,7 @@ export default class App extends Component {
                   hl: searchResults.highlighting[doc.id],
                 };
               })
+              .sort((a, b) => (b.ocrHl && b.ocrHl.numTotal || 0) - (a.ocrHl && a.ocrHl.numTotal || 0))
               .map(({ key, doc, hl, ocrHl }) =>
                   <DigilibResultDocument
                     key={key}
