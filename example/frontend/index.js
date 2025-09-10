@@ -18,11 +18,8 @@ import "preact-material-components/FormField/style.css";
 import "preact-material-components/Checkbox/style.css";
 
 var PARAMS = {
-  fl:
-    "id,source,issue_id,title,subtitle,newspaper_part,author,publisher,date,language",
-  qf:
-    "title^20.0 subtitle^16.0 author^10.0 newspaper_part^5.0 publisher^5.0 ocr_text^0.3",
-  "hl.fl": "title,subtitle,author,publisher",
+  fl: "id,issue_id,title,subtitle,author",
+  "hl.fl": "title",
   "hl.ocr.fl": "ocr_text",
 };
 var IMAGE_API_BASE_B = "__CFG_IMAGE_API_BASE__";
@@ -298,7 +295,7 @@ export default class App extends Component {
     this.state = {
       isSearchPending: false,
       queryParams: {
-        defType: "edismax",
+        "df": "ocr_text",
         "hl.snippets": 1000,
         "hl.weightMatches": true,
         hl: "on",
@@ -398,8 +395,8 @@ export default class App extends Component {
                 return {
                   doc,
                   key: idx,
-                  ocrHl: searchResults.ocrHighlighting[doc.id].ocr_text,
-                  hl: searchResults.highlighting[doc.id],
+                  ocrHl: searchResults.ocrHighlighting[doc.id] ? searchResults.ocrHighlighting[doc.id].ocr_text : null,
+                  hl: searchResults.highlighting[doc.id] || {},
                 };
               })
               .sort((a, b) => (b.ocrHl && b.ocrHl.numTotal || 0) - (a.ocrHl && a.ocrHl.numTotal || 0))
