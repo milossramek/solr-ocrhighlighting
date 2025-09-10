@@ -303,6 +303,7 @@ export default class App extends Component {
       },
       sources: ["gbooks", "lunion"],
       searchResults: undefined,
+      isHelpVisible: false,
     };
   }
 
@@ -358,6 +359,12 @@ export default class App extends Component {
     });
   }
 
+  toggleHelpVisibility() {
+    this.setState({
+      isHelpVisible: !this.state.isHelpVisible
+    });
+  }
+
   render() {
     const { searchResults, isSearchPending, queryParams, sources } = this.state;
     return (
@@ -376,10 +383,54 @@ export default class App extends Component {
             outlined
             trailingIcon="search"
           />
-        <Typography tag="p">
-          Hľadaný výraz: zadávajte s diakritikou, veľkosť písmen nerozhoduje. 
-        </Typography>
         </form>
+        
+        <div style={{ display: 'flex', justifyContent: 'center', margin: '8px 0' }}>
+          <Elevation z={1} style={{ padding: '4px', width: 'max-content' }}>
+          <div
+            onClick={this.toggleHelpVisibility.bind(this)}
+            style={{
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              padding: '4px 0',
+            }}
+          >
+            <span
+              style={{
+                marginRight: '6px',
+                transition: 'transform 0.2s ease-in-out',
+                transform: this.state.isHelpVisible ? 'rotate(90deg)' : 'rotate(0deg)',
+                fontSize: '1em',
+              }}
+            >
+              ►
+            </span>
+            <Typography tag="div" body2 style={{ fontWeight: 'normal' }}>
+              Pravidlá na zadávanie dotazov
+            </Typography>
+          </div>
+
+          {this.state.isHelpVisible && (
+            <div style={{ paddingLeft: '24px', paddingBottom: '4px' }}>
+              <Typography tag="div" body2>
+                <ul style={{ margin: '4px 0', fontSize: '0.9em', textAlign: 'left' }}>
+                  <li>Zadávajte s diakritikou, veľkosť písmen nerozhoduje</li>
+                  <li>Pre vyhľadávanie fráz používajte úvodzovky: <code>"biely kôň"</code></li>
+                  <li>Použite * na konci slova pre vyhľadávanie variant: <code>mačk*</code></li>
+                  <li>Pre vyhľadávanie alternatív používajte OR: <code>pes OR mačka</code></li>
+                  <li>Pre vyžadovanie oboch slov používajte AND: <code>kôň AND biely</code></li>
+                  <li>Vylúčte slová pomocou NOT: <code>zviera NOT pes</code></li>
+                  <li>Používajte zátvorky pre zoskupenie: <code>(pes OR mačka) AND domáci</code></li>
+                  <li>Pre vyhľadávanie v blízkosti slov: <code>"kôň biely"~5</code></li>
+                  <li>Špeciálne znaky (+ - && || ! ( ) { } [ ] ^ ~ * ? : \ /) musia byť escapované</li>
+                  <li>Prázdny dotaz vráti všetky dokumenty</li>
+                </ul>
+              </Typography>
+            </div>
+          )}
+          </Elevation>
+        </div>
         {!isSearchPending && searchResults !== undefined && (
           <Typography tag="p" subtitle1>
             {searchResults.response.numFound === 0 
