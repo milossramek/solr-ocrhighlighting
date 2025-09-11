@@ -416,15 +416,14 @@ export default class App extends Component {
               <Typography tag="div" body2>
                 <ul style={{ margin: '4px 0', fontSize: '0.9em', textAlign: 'left' }}>
                   <li>Zadávajte s diakritikou, veľkosť písmen nerozhoduje</li>
-                  <li>Pre vyhľadávanie fráz používajte úvodzovky: <code>"biely kôň"</code></li>
-                  <li>Použite * na konci slova pre vyhľadávanie variant: <code>mačk*</code></li>
-                  <li>Pre vyhľadávanie alternatív používajte OR: <code>pes OR mačka</code></li>
-                  <li>Pre vyžadovanie oboch slov používajte AND: <code>kôň AND biely</code></li>
-                  <li>Vylúčte slová pomocou NOT: <code>zviera NOT pes</code></li>
-                  <li>Používajte zátvorky pre zoskupenie: <code>(pes OR mačka) AND domáci</code></li>
-                  <li>Pre vyhľadávanie v blízkosti slov: <code>"kôň biely"~5</code></li>
-                  <li>Špeciálne znaky (+ - && || ! ( ) { } [ ] ^ ~ * ? : \ /) musia byť escapované</li>
-                  <li>Prázdny dotaz vráti všetky dokumenty</li>
+                  <li>Na vyhľadávanie fráz používajte úvodzovky: <strong>"biely kôň"</strong></li>
+                  <li>Použite * na konci slova na vyhľadávanie variant: <strong>mačk*</strong></li>
+                  <li>Použite ? namiesto ľubovolného znaku  : <strong>Slov?nsko</strong></li>
+                  <li>Na vyhľadávanie slov v blízkosti : <strong>"zbojníci kôň"~5</strong> (5 znamená počet slov)</li>
+                </ul>
+                <p style={{ margin: '4px 0', fontSize: '0.9em', textAlign: 'left' }}>Poznámky:</p>
+                <ul style={{ margin: '4px 0', fontSize: '0.9em', textAlign: 'left' }}>
+                  <li>Ak kliknete na výstrižok textu v hornej časti výsledku, otvorí sa prehliadač Mirador,<br />v ktorom možete prehľadávať a zobrazovať celú knihu.</li>
                 </ul>
               </Typography>
             </div>
