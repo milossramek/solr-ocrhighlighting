@@ -34,6 +34,11 @@ services:
       - CFG_APP_PATH=/iiif/presentation
       - CFG_DIGILIB_PATH
 
+  cantaloupe:
+    image: uclalibrary/cantaloupe:5.0.7-0
+    volumes:
+      - /var/www/iiif:/imageroot
+
   frontend:
     build:
       context: ./frontend
@@ -53,6 +58,8 @@ services:
       solr:
         condition: service_started
       iiif-prezi:
+        condition: service_started
+      cantaloupe:
         condition: service_started
 
 volumes:
