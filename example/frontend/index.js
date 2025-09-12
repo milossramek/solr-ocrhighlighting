@@ -416,14 +416,14 @@ export default class App extends Component {
               <Typography tag="div" body2>
                 <ul style={{ margin: '4px 0', fontSize: '0.9em', textAlign: 'left' }}>
                   <li>Zadávajte s diakritikou, veľkosť písmen nerozhoduje</li>
-                  <li>Na vyhľadávanie fráz používajte úvodzovky: <strong>"biely kôň"</strong></li>
-                  <li>Použite * na konci slova na vyhľadávanie variant: <strong>mačk*</strong></li>
-                  <li>Použite ? namiesto ľubovolného znaku  : <strong>Slov?nsko</strong></li>
-                  <li>Na vyhľadávanie slov v blízkosti : <strong>"zbojníci kôň"~5</strong> (5 znamená počet slov)</li>
+                  <li>Na vyhľadávanie fráz používajte úvodzovky: <strong>"slovenské povstanie"</strong></li>
+                  <li>Použite * namiesto viacerých znakov: <strong>povsta*</strong></li>
+                  <li>Použite ? namiesto jedného znaku  : <strong>Slov?nsko</strong></li>
+                  <li>Na vyhľadávanie slov v blízkosti : <strong>"povstanie slovenské"~3</strong> <br />(3 znamená celkový počet slov, teda žiadne alebo 1 slovo medzi zadanými slovami)</li>
                 </ul>
                 <p style={{ margin: '4px 0', fontSize: '0.9em', textAlign: 'left' }}>Poznámky:</p>
                 <ul style={{ margin: '4px 0', fontSize: '0.9em', textAlign: 'left' }}>
-                  <li>Ak kliknete na výstrižok textu v hornej časti výsledku, otvorí sa prehliadač Mirador,<br />v ktorom možete prehľadávať a zobrazovať celú knihu.</li>
+                  <li>Po kliknutí na výstrižok textu (mimo vyznačeného textu) v hornej časti výsledku <br /> sa otvorí prehliadač Mirador, v ktorom možno prehľadávať a zobrazovať celú knihu.</li>
                 </ul>
               </Typography>
             </div>
