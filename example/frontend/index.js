@@ -201,7 +201,9 @@ const getImageUrl = (bookId, region, page, width) => {
     const h = parseInt((region.lry - region.uly));
     const regionStr = `${x},${y},${w},${h}`;
     const widthStr = width ? `${width},` : "max";
-    return `${IMAGE_API_BASE_B}/${bookId}%2F${page.id}.jpg/${regionStr}/${widthStr}/0/default.jpg`;
+    const imageUrl = `${IMAGE_API_BASE_B}/${bookId}%2F${page.id}.jpg/${regionStr}/${widthStr}/0/default.jpg`;
+    console.log("Image snippet URL:", imageUrl);
+    return imageUrl;
 };
 
 function DigilibResultDocument({ hl, ocr_hl, query, doc: initialDoc }) {
@@ -320,7 +322,9 @@ export default class App extends Component {
     if (this.state.sources.length == 1) {
       params.fq = "source:" + this.state.sources[0];
     }
-    fetch(`${APP_BASE}/solr/ocr/select?${new URLSearchParams(params)}`)
+    const queryUrl = `${APP_BASE}/solr/ocr/select?${new URLSearchParams(params)}`;
+    console.log("Full Solr query:", queryUrl);
+    fetch(queryUrl)
       .then((resp) => resp.json())
       .then((data) =>
         this.setState({ searchResults: data, isSearchPending: false })
